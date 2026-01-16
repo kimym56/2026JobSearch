@@ -1,0 +1,46 @@
+.app {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.counter-display {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.counter-display h2 {
+  font-size: 48px;
+  color: #333;
+}
+
+.hint {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* TODO: Add your styles here */
+/* Suggested styles to add:
+   - Button groups with spacing
+   - Disabled button styles
+   - History list styling
+   - Operation badges/tags
+   - Hover effects
+*/

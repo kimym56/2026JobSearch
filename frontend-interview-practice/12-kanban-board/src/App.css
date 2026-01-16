@@ -1,0 +1,32 @@
+.app {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+.hint {
+  text-align: center;
+  color: #666;
+  padding: 60px 20px;
+}
+
+.hint p {
+  margin: 10px 0;
+}
+
+/* TODO: Add your styles here */

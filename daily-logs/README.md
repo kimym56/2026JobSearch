@@ -9,6 +9,9 @@ Track your daily progress, learnings, and reflections throughout the 50-day jour
 - **[Day 1.md](./Day%201.md)** - Friday, Jan 9: Self-Assessment & Setup
 - **[Day 2.md](./Day%202.md)** - Monday, Jan 12: React Course Start
 - **[Day_3.md](./Day_3.md)** - Tuesday, Jan 13: Challenge 01 - Todo List
+- **[Day 4.md](./Day%204.md)** - Wednesday, Jan 14: Counter with History + Pilates Night
+- **[Day 5.md](./Day%205.md)** - Thursday, Jan 15: Tabs Component + JS Arrays
+- **[Day 6.md](./Day%206.md)** - Friday, Jan 16: Redo Challenge 01 (TypeScript) + Start 02
 
 ---
 

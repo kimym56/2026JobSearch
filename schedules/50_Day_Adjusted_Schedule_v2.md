@@ -1,7 +1,7 @@
-# Frontend Engineer Prep — Adjusted Schedule v2 (React First + Implementation Challenges)
+# Full-Stack Engineer Preparation — Side Project + Frontend Job Prep (v3)
 
-*Saturdays & Sundays OFF for rest | Extended weekday hours (9 AM - 1:00 AM)*
-*Part-time work Jan 9-21 | React-focused first 2 weeks with **SPECIFIC IMPLEMENTATION CHALLENGES***
+*Saturdays & Sundays OFF for rest | Weekday dual-track: Side Project (Day) + Frontend Prep (Evening)*
+*Starting Jan 26, 2026 | Build MOCHEONG (Full-Stack AI Wedding App) + Frontend Interview Challenges*
 
 ---
 
@@ -27,10 +27,43 @@ This schedule now includes **15 specific implementation challenges** from `front
 ## Schedule Philosophy
 
 - **Saturdays & Sundays OFF**: Complete rest and recovery
-- **Monday-Friday**: Extended hours (9 AM - 1:00 AM) with structured breaks
-- **Sustainable Intensity**: Multiple breaks built in to prevent burnout
-- **React First with REAL Challenges**: Master React Days 2-9 with timed implementation tests
-- **Frontend + Algorithm Balance**: Optimized for both implementation and algorithm tests
+- **Dual-Track Weekdays**: Side project (daytime 9 AM - 6 PM) + Frontend prep (evening 6 PM - 1 AM)
+- **Sustainable Intensity**: Structured breaks, real-world project experience + interview preparation
+- **Full-Stack Experience**: Build production-ready MOCHEONG app using React, NestJS, FastAPI, AI agents
+- **Frontend Interview Ready**: 15 timed challenges + algorithms in evening blocks
+- **Thursday Special**: Creative Vibe Coding Lab (6:30 PM - 10 PM), lighter frontend prep after
+
+---
+
+## Schedule Restart — Fresh Start Mon Jan 26 with Dual-Track Approach
+
+**Starting fresh from Monday, Jan 26, 2026** with a new dual-track system:
+
+**DAYTIME TRACK (9 AM - 6 PM)**: Build MOCHEONG Side Project
+- Full-stack wedding invitation and chat system with AI agents
+- Tech stack: React + NestJS + FastAPI/LangChain + PostgreSQL + Redis
+- Real-world production experience with modern full-stack architecture
+- ~7.5-8 hours focused development daily (weekdays only)
+
+**EVENING TRACK (6 PM - 1 AM)**: Frontend Job Preparation
+- 15 timed frontend implementation challenges
+- Algorithm practice (LeetCode, Baekjoon, Programmers)
+- Interview preparation and portfolio building
+- ~6 hours focused study daily (weekdays only, lighter on Thursdays)
+
+**THURSDAY SPECIAL**: Creative Vibe Coding Lab
+- 6:30 PM - 10 PM: Creative Vibe Coding Lab (AI-powered creative coding)
+- 11:00 PM - 1:00 AM: Light frontend prep (2 hours instead of 6)
+
+**Quick mapping (this week):**
+
+| Calendar Date | Day # | Morning: MOCHEONG Project | Evening: Frontend Prep |
+|--------------|-------|---------------------------|------------------------|
+| Mon, Jan 27 | Day 1 | Project setup + architecture planning | React fundamentals review + Challenge 01 prep |
+| Tue, Jan 28 | Day 2 | Database schema + Auth setup | Challenge 01 - Todo List (30min) |
+| Wed, Jan 29 | Day 3 | Wedding invitation UI basics | Challenge 02 - Counter (30min) |
+| Thu, Jan 30 | Day 4 | Chat system architecture | Creative Vibe Lab + Light review |
+| Fri, Jan 31 | Day 5 | API endpoints + TypeORM entities | Challenge 03 - Tabs (30min) + Algorithms |
 
 ---
 
@@ -52,590 +85,1033 @@ This schedule now includes **15 specific implementation challenges** from `front
 
 ---
 
-## Your Two Schedule Types
+## Your Three Schedule Types
 
-### Schedule A: Full Days (No Work) — 9 AM to 1:00 AM
-**Use on:** Jan 22 onwards (weekdays only)
+### Schedule A: Regular Weekday (Mon, Tue, Wed, Fri) — Dual Track
+**Use on:** Monday, Tuesday, Wednesday, Friday
 
 | Time | Duration | Activity |
 |------|----------|----------|
-| 9:00 - 9:15 | 15 min | ☕ Morning review, plan the day |
-| 9:15 - 11:30 | 2h 15m | 🧠 **Deep Work Block 1** — Main learning |
-| 11:30 - 12:00 | 30 min | 🚶 Break |
-| 12:00 - 2:00 | 2 hrs | 💻 **Deep Work Block 2** — Practice/building |
-| 2:00 - 3:00 | 1 hr | 🍽️ Lunch |
-| 3:00 - 5:00 | 2 hrs | 📝 **Afternoon Block 1** — Continued learning |
-| 5:00 - 5:30 | 30 min | 🚶 Break |
-| 5:30 - 7:00 | 1.5 hrs | 💪 **Afternoon Block 2** — Projects/practice |
-| 7:00 - 7:30 | 30 min | 🚶 Break |
-| 7:30 - 8:30 | 1 hr | 🍽️ Dinner |
-| 8:30 - 11:00 | 2.5 hrs | 🌙 **Evening Block 1** — Timed challenges + Algorithms |
+| 9:00 - 9:15 | 15 min | ☕ Plan the day: side project goals + evening prep topics |
+| 9:15 - 12:00 | 2h 45m | 🚀 **MOCHEONG Block 1** — Core development (backend/frontend/agents) |
+| 12:00 - 1:00 | 1 hr | 🍽️ Lunch |
+| 1:00 - 3:30 | 2.5 hrs | 🚀 **MOCHEONG Block 2** — Feature implementation |
+| 3:30 - 4:00 | 30 min | 🚶 Break |
+| 4:00 - 6:00 | 2 hrs | 🚀 **MOCHEONG Block 3** — Testing, debugging, documentation |
+| 6:00 - 7:00 | 1 hr | 🍽️ Dinner + Transition to evening mode |
+| 7:00 - 9:00 | 2 hrs | 💻 **Frontend Prep Block 1** — React learning OR timed challenge |
+| 9:00 - 9:30 | 30 min | 🚶 Break |
+| 9:30 - 11:00 | 1.5 hrs | 💻 **Frontend Prep Block 2** — Challenge review OR practice |
 | 11:00 - 11:30 | 30 min | 🚶 Break |
-| 11:30 - 1:00 | 1.5 hrs | 🌙 **Evening Block 2** — Review/additional practice |
+| 11:30 - 1:00 | 1.5 hrs | 🧠 **Algorithm Block** — LeetCode/Baekjoon/Programmers + Anki review |
 
-**Total: ~12-13 hours of focused work**
+**Total: ~7.5 hrs side project + ~6 hrs frontend prep = 13.5 hrs focused work**
 
 ---
 
-### Schedule B: Part-Time Work Days — 9 AM to 1:00 AM
-**Use on:** Jan 9-21 (weekdays with work)
+### Schedule B: Thursday (Creative Vibe Coding Lab Day) — Lighter Evening
+**Use on:** Thursdays only
 
 | Time | Duration | Activity |
 |------|----------|----------|
-| 9:00 - 10:00 | 1 hr | 🧠 **Morning Block** — Focused learning before work |
-| 10:00 - 12:00 | 2 hrs | 💼 Part-time work |
+| 9:00 - 9:15 | 15 min | ☕ Plan the day |
+| 9:15 - 12:00 | 2h 45m | 🚀 **MOCHEONG Block 1** — Core development |
 | 12:00 - 1:00 | 1 hr | 🍽️ Lunch |
-| 1:00 - 3:00 | 2 hrs | 💼 Part-time work |
-| 3:00 - 3:30 | 30 min | 🚶 Break, transition |
-| 3:30 - 5:30 | 2 hrs | 💻 **Afternoon Block** — Main study/practice |
-| 5:30 - 6:00 | 30 min | 🚶 Break |
-| 6:00 - 7:30 | 1.5 hrs | 📝 **Evening Block 1** — Continued learning |
-| 7:30 - 8:30 | 1 hr | 🍽️ Dinner |
-| 8:30 - 10:30 | 2 hrs | 🌙 **Night Block 1** — React challenges (timed) |
-| 10:30 - 11:00 | 30 min | 🚶 Break |
-| 11:00 - 1:00 | 2 hrs | 🌙 **Night Block 2** — Challenge review & additional practice |
+| 1:00 - 3:30 | 2.5 hrs | 🚀 **MOCHEONG Block 2** — Feature implementation |
+| 3:30 - 4:00 | 30 min | 🚶 Break |
+| 4:00 - 5:30 | 1.5 hrs | 🚀 **MOCHEONG Block 3** — Wrap up, commit code |
+| 5:30 - 6:30 | 1 hr | 🍽️ Early Dinner + Prep for lab |
+| 6:30 - 10:00 | 3.5 hrs | 🎨 **Creative Vibe Coding Lab** — AI-powered creative coding |
+| 10:00 - 11:00 | 1 hr | 🚶 Travel home, decompress |
+| 11:00 - 12:00 | 1 hr | 💻 **Light Frontend Prep** — Review concepts OR quick practice |
+| 12:00 - 1:00 | 1 hr | 🧠 **Light Algorithms** — 2 Easy problems OR review solutions |
 
-**Total: ~10-11 hours of focused work** (on work days)
+**Total: ~7 hrs side project + ~2 hrs frontend prep + 3.5 hrs creative coding = 12.5 hrs**
+
+---
+
+### Schedule C: Weekend (Sat-Sun) — Complete Rest
+**Use on:** Every Saturday and Sunday
+
+**🎉 NO STUDY, NO WORK, NO CODE**
+
+- Rest and recovery
+- Personal time
+- Reflect on the week (optional, light)
+- Prepare mentally for next week (optional, light)
+
+**Consistency beats intensity. Rest is productive.**
 
 ---
 
 # Complete Day-by-Day Schedule
 
+**Legend:**
+- 🚀 = MOCHEONG Side Project (daytime)
+- 💻 = Frontend Job Prep (evening)
+- 🎨 = Creative Vibe Coding Lab (Thursday)
+- 🧠 = Algorithm Practice
+- 🎉 = REST DAY
+
 ---
 
-## PHASE 1: Foundation & React Mastery (Week 1-2)
+## PHASE 1: MOCHEONG Foundation + Basic React Challenges (Week 1-2)
 
-### Week 1: Jan 9-16
+### Week 1: Jan 27 - Jan 31 (Fresh Start with Dual Track!)
 
 ---
 
-### Day 1 — Friday, Jan 9 ⚠️ WORK DAY
-**Focus: Self-Assessment & Setup**
+### Day 1 — Monday, Jan 27
+**🚀 MOCHEONG: Project Setup + Architecture | 💻 React Review + Challenge 01 Prep**
 
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
 | Time | Task |
 |------|------|
-| 9:00 - 10:00 | Audit your skills: HTML, CSS, JS, React. Create "I Don't Know" list. |
-| 10:00 - 12:00 | 💼 Part-time work |
+| 9:00 - 9:15 | 🎉 **NEW START!** Review CLAUDE.md, plan project architecture |
+| 9:15 - 12:00 | 🚀 Environment setup: Run `./setup-env.sh`, configure .env files, test Docker |
 | 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | Find 5 frontend job postings. Identify skill gaps. Set up `frontend-interview-practice/` repo. |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | Explore all 15 challenges: read READMEs, understand requirements, create practice tracker |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 10:30 | Resume: Gather past projects, quantify achievements |
-| 10:30 - 11:00 | 🚶 Break |
-| 11:00 - 1:00 | LinkedIn profile update + Review challenge #01 (Todo List) requirements |
+| 1:00 - 3:30 | 🚀 Database setup: PostgreSQL + Redis with docker-compose, create initial schema |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Backend: Initialize NestJS modules (auth, chat, invitation), basic project structure |
 
-**End time: 1:00 AM**
-
----
-
-### Weekend — Jan 11-12 (Sat-Sun) 🎉 REST DAYS
-**Complete rest and recovery. No study scheduled.**
-
----
-
-### Day 2 — Monday, Jan 12 ⚠️ WORK DAY
-**Focus: React Course Start (4 hours) + Component Building**
-
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
 | Time | Task |
 |------|------|
-| 9:00 - 10:00 | **React Course** (Hour 1/4): React fundamentals, JSX, components |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | **React Course** (Hours 2-3/4): Props, state, hooks basics |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | **React Course** (Hour 4/4): useEffect, API calls, complete course |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 10:15 | 🎯 **React Practice**: Build 2 components deeply (Card, Button) - rebuild from scratch |
-| 10:15 - 10:45 | 🚶 Break |
-| 10:45 - 12:15 | 🎯 **React Practice**: Build Input component with useState + experiment |
-| 12:15 - 1:00 | 📝 Reflection + Tomorrow planning + Cheat sheet creation |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Focus 100% on React mastery
-
----
-
-### Day 3 — Tuesday, Jan 13 ⚠️ WORK DAY
-**Focus: 🏆 CHALLENGE 01 - Todo List (30min)**
-
-| Time | Task |
-|------|------|
-| 9:00 - 10:00 | React practice: Review yesterday's components, rebuild one from memory |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | Build List component (map/keys) + HTML/CSS review (semantic tags, forms, box model) |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | CSS Layouts: Flexbox (build 2 layouts), Grid (build 1 layout) |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:00 | **📖 PREP**: Read `01-todo-list/README.md` carefully. Plan approach (5min). |
-| 9:00 - 9:30 | **⏱️ CHALLENGE 01 TIMED (30min)**: `cd 01-todo-list && npm install && npm run dev` |
-| 9:30 - 10:30 | Continue building: Add localStorage, clear completed, polish |
-| 10:30 - 11:00 | 🚶 Break |
-| 11:00 - 12:00 | **📝 REVIEW**: Test all features, compare with requirements, note learnings |
-| 12:00 - 1:00 | Rebuild one feature from memory without looking at code + Update tracker |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Building React state management muscle memory
-**📍 Location**: `frontend-interview-practice/01-todo-list/`
-
----
-
-### Day 4 — Wednesday, Jan 14 ⚠️ WORK DAY 🧘‍♀️ PILATES NIGHT
-**Focus: 🏆 CHALLENGE 02 - Counter with History (30min)**
-
-| Time | Task |
-|------|------|
-| 9:00 - 10:00 | React useState patterns: primitives, objects, arrays, immutability |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | CSS: Specificity, cascade, inheritance. Responsive design principles. |
-| 5:30 - 6:00 | 🍽️ Early Dinner |
-| 6:00 - 11:00 | 🧘‍♀️ **PILATES CLASS** |
-| 11:00 - 11:30 | 🚶 Break, transition home |
-| 11:30 - 12:00 | **⏱️ CHALLENGE 02 TIMED (30min)**: Counter with undo/redo |
-| 12:00 - 1:00 | **📝 REVIEW**: Test undo/redo edge cases, improve code + Update tracker |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Light practice after Pilates, focus on command pattern
-**📍 Location**: `frontend-interview-practice/02-counter-with-history/`
-
----
-
-### Day 5 — Thursday, Jan 15 ⚠️ WORK DAY
-**Focus: 🏆 CHALLENGE 03 - Tabs Component (30min)**
-
-| Time | Task |
-|------|------|
-| 9:00 - 10:00 | React useEffect: dependency array, cleanup, common patterns |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | JavaScript ES6+: let/const, arrow functions, destructuring, spread/rest |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | Array methods deep dive: map, filter, reduce, find, some, every |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:00 | **⏱️ CHALLENGE 03 TIMED (30min)**: Tabs with keyboard navigation |
-| 9:00 - 10:00 | Add URL hash navigation, polish transitions |
-| 10:00 - 10:30 | 🚶 Break |
-| 10:30 - 11:30 | Build form with validation (separate practice, no challenge yet) |
-| 11:30 - 1:00 | Build data fetching component with loading/error states + Review |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Mastering component composition and state
-**📍 Location**: `frontend-interview-practice/03-tabs-component/`
-
----
-
-### Day 6 — Friday, Jan 16 ⚠️ WORK DAY
-**Focus: 🏆 CHALLENGE 04 - Accordion (30min)**
-
-| Time | Task |
-|------|------|
-| 9:00 - 10:00 | React Context API: create theme context, consume in components |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | JavaScript closures: theory, write 5 examples, explain each |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | Scope chain, execution context, lexical environment |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:00 | **⏱️ CHALLENGE 04 TIMED (30min)**: Accordion with smooth animations |
-| 9:00 - 10:00 | Add keyboard navigation, multi-open mode |
-| 10:00 - 10:30 | 🚶 Break |
-| 10:30 - 12:00 | Build theme switcher with Context (separate practice) |
-| 12:00 - 1:00 | Add localStorage persistence to theme + Review |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Practicing conditional rendering and animations
-**📍 Location**: `frontend-interview-practice/04-accordion/`
-
----
-
-### Weekend — Jan 18-19 (Sat-Sun) 🎉 REST DAYS
-**Complete rest and recovery. No study scheduled.**
-
----
-
-### Week 2: Jan 20-23
-
----
-
-### Day 7 — Monday, Jan 20 ⚠️ WORK DAY
-**Focus: useReducer + Async JavaScript**
-
-| Time | Task |
-|------|------|
-| 9:00 - 10:00 | React useReducer: when to use, patterns, vs useState |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | JavaScript async: Event loop (watch Philip Roberts talk), callbacks |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | Promises: create, chain, Promise.all, Promise.race, async/await |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 10:30 | 🎯 **React Practice**: Build shopping cart with useReducer (add/remove/update) |
-| 10:30 - 11:00 | 🚶 Break |
-| 11:00 - 1:00 | Complete shopping cart: quantities, totals, localStorage + Review |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Complex state management practice before final challenge
-**Note**: Preparing for Challenge 05 (Modal) tomorrow
-
----
-
-### Day 8 — Tuesday, Jan 21 ⚠️ WORK DAY (Last work day!) 🎉
-**Focus: 🏆 CHALLENGE 05 - Modal Dialog (45min)**
-
-| Time | Task |
-|------|------|
-| 9:00 - 10:00 | Custom hooks: rules, building useFetch, useLocalStorage, useDebounce |
-| 10:00 - 12:00 | 💼 Part-time work |
-| 12:00 - 1:00 | 🍽️ Lunch |
-| 1:00 - 3:00 | 💼 Part-time work (LAST DAY! 🎉) |
-| 3:00 - 3:30 | 🚶 Break |
-| 3:30 - 5:30 | DOM manipulation: querySelector, createElement, events, focus management |
-| 5:30 - 6:00 | 🚶 Break |
-| 6:00 - 7:30 | Event handling: bubbling, capturing, delegation. ARIA and a11y basics. |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:15 | **⏱️ CHALLENGE 05 TIMED (45min)**: Modal with focus trap |
-| 9:15 - 10:30 | Complete modal: escape key, click outside, body scroll lock |
-| 10:30 - 11:00 | 🚶 Break |
-| 11:00 - 12:30 | **📝 REVIEW**: Test all keyboard interactions, improve accessibility |
-| 12:30 - 1:00 | 🎉 Celebrate last work day! Review all 5 challenges completed |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — Focus management and accessibility mastery
-**📍 Location**: `frontend-interview-practice/05-modal-dialog/`
-**🎉 5/15 Basic Challenges Complete!**
-
----
-
-### Day 9 — Wednesday, Jan 22 (Full Day) 🚀 NO MORE WORK! 🧘‍♀️ PILATES NIGHT
-**Focus: React Performance + JavaScript `this` + Week Review**
-
-| Time | Task |
-|------|------|
-| 9:00 - 9:15 | 🎉 Celebrate — full study days from now on! Plan the day. |
-| 9:15 - 11:30 | React.memo, useMemo, useCallback: when, why, performance profiling |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | Build app with intentional re-render problems, then optimize |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | JavaScript `this`: call, apply, bind, arrow functions vs regular |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 6:00 | 🍽️ Early Dinner |
-| 6:00 - 11:00 | 🧘‍♀️ **PILATES CLASS** |
-| 11:00 - 11:30 | 🚶 Break, transition home |
-| 11:30 - 1:00 | **📊 WEEK REVIEW**: Redo one challenge from memory, review all 5, update tracker |
-
-**End time: 1:00 AM**
-**🚫 No LeetCode** — React foundation complete! Ready for algorithms tomorrow.
-**✅ Phase 1 Complete**: 5 Basic Challenges + React Fundamentals
-
----
-
-## PHASE 2: Dual Track Begins (Week 3-4)
-
-### Day 10 — Thursday, Jan 23 (Full Day)
-**Focus: Week Review + Mini Project + START ALGORITHMS! 🎯**
-
-| Time | Task |
-|------|------|
-| 9:00 - 9:15 | Plan the day - Dual track starts today! |
-| 9:15 - 11:30 | Review all React & JS concepts from Weeks 1-2. Fill gaps. |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | Build: Quiz app with React (timer, scoring, state management) |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | Continue quiz app: add features, polish, useReducer for score |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 7:30 | Complete quiz app, test all functionality, add localStorage |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:00 | **📖 PREP**: Read Challenge 06 (Autocomplete) requirements |
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 React fundamentals review: JSX, components, props, useState, useEffect |
 | 9:00 - 9:30 | 🚶 Break |
-| 9:30 - 11:00 | 🧠 **Algorithm Practice** (1.5 hrs): Set up LeetCode. Solve 2 Easy (Two Sum, Valid Parentheses) |
+| 9:30 - 11:00 | 💻 Practice: Build 3 simple components from scratch (Card, Button, List) |
 | 11:00 - 11:30 | 🚶 Break |
-| 11:30 - 1:00 | 🧠 **Algorithm Practice**: 2 more Easy + Review solutions + Anki cards |
+| 11:30 - 1:00 | 💻 Read Challenge 01 (Todo List) README, plan approach, review patterns |
 
-**End time: 1:00 AM**
-**✅ Dual Track Starts!** Quiz project + 4 algorithm problems
-**Platforms**: Baekjoon (Bronze), Programmers (Level 1), LeetCode (Easy)
-
----
-
-### Weekend — Jan 25-26 (Sat-Sun) 🎉 REST DAYS
-**Complete rest and recovery. No study scheduled.**
+**MOCHEONG Progress**: Project infrastructure ready
+**Frontend Progress**: React basics refreshed, Challenge 01 planned
 
 ---
 
-### Day 11 — Monday, Jan 27 (Full Day)
-**Focus: 🏆 CHALLENGE 06 - Autocomplete (45min) + Algorithms**
+### Day 2 — Tuesday, Jan 28
+**🚀 MOCHEONG: Auth + Database | 💻 Challenge 01 - Todo List**
 
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
 | Time | Task |
 |------|------|
-| 9:00 - 9:15 | Plan the day |
-| 9:15 - 11:30 | TypeScript: types, interfaces, generics. Set up Vite with TS. |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | Debouncing pattern: write custom hook, test with input |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | Keyboard navigation patterns: focus management, arrow keys |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 7:30 | HTTP/REST APIs: fetch, axios, error handling, status codes |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:15 | **⏱️ CHALLENGE 06 TIMED (45min)**: Autocomplete with debouncing |
-| 9:15 - 10:00 | Complete: keyboard nav, click outside, highlight matching text |
-| 10:00 - 10:30 | 🚶 Break |
-| 10:30 - 11:30 | 🧠 **Algorithms**: 2 Easy problems (String, Array) |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 1:00 | 🧠 **Algorithms**: 1 Medium attempt + Review + Anki |
+| 9:00 - 9:15 | Plan: Auth system architecture (JWT + Passport + Firebase) |
+| 9:15 - 12:00 | 🚀 Backend: TypeORM entities (User, Message, Invitation), database migrations |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Backend: Auth module - JWT strategy, Passport local, auth guards |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Backend: Auth endpoints (register, login, refresh token), test with Postman |
 
-**End time: 1:00 AM**
-**✅ Dual Track**: Autocomplete + 3 algo problems
-**📍 Location**: `frontend-interview-practice/06-autocomplete/`
-
----
-
-### Day 12 — Tuesday, Jan 28 (Full Day)
-**Focus: 🏆 CHALLENGE 07 - Infinite Scroll (45min) + Algorithms**
-
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
 | Time | Task |
 |------|------|
-| 9:00 - 9:15 | Plan the day |
-| 9:15 - 11:30 | React Router: setup, routes, links, params, nested routes |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | State management: Context vs Redux, when to use each |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | Intersection Observer API: theory, examples, polyfills |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 7:30 | Build pagination component from scratch |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:15 | **⏱️ CHALLENGE 07 TIMED (45min)**: Infinite scroll with observer |
-| 9:15 - 10:00 | Add skeleton loading, error retry, scroll to top button |
-| 10:00 - 10:30 | 🚶 Break |
-| 10:30 - 11:30 | 🧠 **Algorithms**: 2 Easy problems (Hash Table, Two Pointers) |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 1:00 | 🧠 **Algorithms**: 1 Medium + Review + Anki |
-
-**End time: 1:00 AM**
-**✅ Dual Track**: Infinite scroll + 3 algo problems
-**📍 Location**: `frontend-interview-practice/07-infinite-scroll/`
-
----
-
-### Day 13 — Wednesday, Jan 29 (Full Day) 🧘‍♀️ PILATES NIGHT
-**Focus: 🏆 CHALLENGE 08 - Image Carousel (50min) + Algorithms**
-
-| Time | Task |
-|------|------|
-| 9:00 - 9:15 | Plan the day |
-| 9:15 - 11:30 | CSS animations: keyframes, transitions, transforms |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | Touch events: swipe gestures, mobile considerations |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | Image optimization: lazy loading, srcset, formats |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 6:00 | 🍽️ Early Dinner |
-| 6:00 - 11:00 | 🧘‍♀️ **PILATES CLASS** |
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Final prep: Review Challenge 01 requirements |
+| 7:30 - 8:00 | 💻 **⏱️ CHALLENGE 01 TIMED (30min)**: Todo List |
+| 8:00 - 9:00 | 💻 Complete features: localStorage, clear completed, edit todos |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 **REVIEW**: Test all features, refactor, note learnings |
 | 11:00 - 11:30 | 🚶 Break |
-| 11:30 - 12:20 | **⏱️ CHALLENGE 08 TIMED (50min)**: Carousel with animations |
-| 12:20 - 1:00 | Add auto-play, thumbnail preview + Quick review |
+| 11:30 - 1:00 | 🧠 **Algorithms START**: Set up platforms, solve 2 Easy (Two Sum, Valid Parentheses) |
 
-**End time: 1:00 AM**
-**⚠️ Light algo day** — 2 Easy problems only (save energy after Pilates)
-**📍 Location**: `frontend-interview-practice/08-image-carousel/`
-
----
-
-### Day 14 — Thursday, Jan 30 (Full Day)
-**Focus: 🏆 CHALLENGE 09 - Form Validation (60min) + Algorithms**
-
-| Time | Task |
-|------|------|
-| 9:00 - 9:15 | Plan the day |
-| 9:15 - 11:30 | Form validation: patterns, regex, custom validators |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | Form libraries: React Hook Form (study only, don't use in challenge) |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | Accessibility: ARIA, semantic HTML, screen readers |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 7:30 | Security: XSS, CSRF, input sanitization |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:30 | **⏱️ CHALLENGE 09 TIMED (60min)**: Multi-field form validation |
-| 9:30 - 10:00 | 🚶 Break |
-| 10:00 - 11:00 | Complete form: password strength meter, async email check |
-| 11:00 - 11:30 | 🚶 Break |
-| 11:30 - 1:00 | 🧠 **Algorithms**: 3 problems (1 Easy, 2 Medium attempts) + Review |
-
-**End time: 1:00 AM**
-**✅ Dual Track**: Complex form + 3 algo problems
-**📍 Location**: `frontend-interview-practice/09-form-validation/`
+**MOCHEONG Progress**: Auth system complete
+**Frontend Progress**: Challenge 01 complete ✅ (1/15), 2 algo problems
+**📍 Challenge Location**: `frontend-interview-practice/01-todo-list/`
 
 ---
 
-### Day 15 — Friday, Jan 31 (Full Day)
-**Focus: 🏆 CHALLENGE 10 - Drag and Drop (60min) + Algorithms**
+### Day 3 — Wednesday, Jan 29
+**🚀 MOCHEONG: Wedding Invitation UI | 💻 Challenge 02 - Counter**
 
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
 | Time | Task |
 |------|------|
-| 9:00 - 9:15 | Plan the day |
-| 9:15 - 11:30 | Drag and Drop API: dragstart, dragover, drop, dataTransfer |
-| 11:30 - 12:00 | 🚶 Break |
-| 12:00 - 2:00 | Build simple drag-drop example from scratch |
-| 2:00 - 3:00 | 🍽️ Lunch |
-| 3:00 - 5:00 | Alternative: mouse events (mousedown, mousemove, mouseup) |
-| 5:00 - 5:30 | 🚶 Break |
-| 5:30 - 7:30 | Touch support: touch events, mobile drag-drop |
-| 7:30 - 8:30 | 🍽️ Dinner |
-| 8:30 - 9:30 | **⏱️ CHALLENGE 10 TIMED (60min)**: Drag-drop reorderable list |
-| 9:30 - 10:00 | 🚶 Break |
-| 10:00 - 11:00 | Add ghost preview, drop zones, animations |
-| 11:00 - 11:30 | 🚶 Break |
-| 11:30 - 1:00 | 🧠 **Algorithms**: 3 problems + Review + Anki |
+| 9:00 - 9:15 | Plan: Invitation page layout, Kakao Map integration |
+| 9:15 - 12:00 | 🚀 Frontend: Setup React + Vite, install Tailwind CSS, create routing structure |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Build invitation page UI (venue info, date, timeline components) |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Frontend: Integrate Kakao Map API, display venue location with marker |
 
-**End time: 1:00 AM**
-**✅ Dual Track**: Drag-drop + 3 algo problems
-**📍 Location**: `frontend-interview-practice/10-drag-and-drop/`
-**🎉 10/15 Challenges Complete!** (Basic + Intermediate done)
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 JavaScript review: Immutability, array/object updates |
+| 7:30 - 8:00 | 💻 **⏱️ CHALLENGE 02 TIMED (30min)**: Counter with History (undo/redo) |
+| 8:00 - 9:00 | 💻 Complete: Redo functionality, step counter, polish UI |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 **REVIEW**: Test edge cases, understand command pattern |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Easy (Array, Hash Table) + Review + Anki |
+
+**MOCHEONG Progress**: Invitation page with Kakao Map working
+**Frontend Progress**: Challenge 02 complete ✅ (2/15), 2 algo problems
+**📍 Challenge Location**: `frontend-interview-practice/02-counter-with-history/`
+
+---
+
+### Day 4 — Thursday, Jan 30 🎨 CREATIVE VIBE CODING LAB
+**🚀 MOCHEONG: Chat System Architecture | 💻 Light Review (Lab Night)**
+
+**DAYTIME (9 AM - 5:30 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Chat system design (WebSocket, rooms, messages) |
+| 9:15 - 12:00 | 🚀 Backend: Socket.IO setup, chat gateway, connection handling |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Backend: Chat entities (Room, Message), chat service methods |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 5:30 | 🚀 Backend: Implement message persistence with TypeORM, test WebSocket |
+
+**EVENING (5:30 PM - 1 AM): Creative Lab + Light Prep**
+| Time | Task |
+|------|------|
+| 5:30 - 6:30 | 🍽️ Early Dinner + Prep for lab |
+| 6:30 - 10:00 | 🎨 **CREATIVE VIBE CODING LAB** — AI-powered creative coding |
+| 10:00 - 11:00 | 🚶 Travel home, decompress |
+| 11:00 - 12:00 | 💻 Light review: Redo Challenge 01 or 02 from memory |
+| 12:00 - 1:00 | 🧠 Light algorithms: 1-2 Easy problems OR review solutions |
+
+**MOCHEONG Progress**: Chat system backend ready
+**Frontend Progress**: Challenge review, 1-2 algo problems (lighter day)
+**Note**: Lighter evening due to Creative Vibe Coding Lab
+
+---
+
+### Day 5 — Friday, Jan 31
+**🚀 MOCHEONG: Chat UI + Real-time | 💻 Challenge 03 - Tabs**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Chat interface design, message components |
+| 9:15 - 12:00 | 🚀 Frontend: Build chat UI (message list, input, send button) |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Socket.IO client setup, connect to backend, send/receive messages |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Frontend: Chat features (auto-scroll, typing indicator, timestamps) |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: Component composition, state management patterns |
+| 7:30 - 8:00 | 💻 **⏱️ CHALLENGE 03 TIMED (30min)**: Tabs Component with keyboard nav |
+| 8:00 - 9:00 | 💻 Complete: URL hash navigation, smooth transitions, accessibility |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 **REVIEW**: Test all keyboard shortcuts, improve UX |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Easy (String, Two Pointers) + Review + Anki |
+
+**MOCHEONG Progress**: Real-time chat working end-to-end! 🎉
+**Frontend Progress**: Challenge 03 complete ✅ (3/15), 2 algo problems
+**📍 Challenge Location**: `frontend-interview-practice/03-tabs-component/`
 
 ---
 
 ### Weekend — Feb 1-2 (Sat-Sun) 🎉 REST DAYS
-**Complete rest and recovery. Celebrate 10 challenges complete!**
+**Complete rest and recovery. Week 1 of dual-track complete!**
+**Progress Check**: 3/15 challenges done, MOCHEONG has auth + invitation + chat basics
 
 ---
 
-## PHASE 3: Algorithm Patterns Mastery (Week 5-6)
-
-*Days 16-29: Algorithm intensive - Full original schedule maintained*
-*Light frontend practice: Review past challenges, explore new tools*
-*Focus: Reach Baekjoon Silver 3, Programmers Level 2-3, LeetCode Medium*
-
-**Frontend Maintenance During Days 16-29:**
-- Evening: Quick challenge review (15-30min)
-- Redo one challenge every 3 days
-- Explore React ecosystem (Next.js, Tailwind, React Query)
-- No new challenges - consolidate skills
+### Week 2: Feb 3-7
 
 ---
 
-## PHASE 4: Portfolio Projects (Week 7-9)
+### Day 6 — Monday, Feb 3
+**🚀 MOCHEONG: AI Agent Setup | 💻 Challenge 04 - Accordion**
 
-### Days 30-32: 🏆 CHALLENGE 11 - Data Table (Split over 3 days)
-**Location**: `frontend-interview-practice/11-data-table/`
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Agent Manager architecture (FastAPI + LangChain) |
+| 9:15 - 12:00 | 🚀 Agent: Initialize FastAPI server, create basic agent structure |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Agent: Set up LangChain with OpenAI, create first chat agent |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Agent: Connect agent to backend via REST API, test chat flow |
 
-**Day 30 — Monday, Feb 17**
-- Morning: Advanced TypeScript patterns
-- Afternoon: Table architecture planning
-- Evening: **Challenge 11 Part 1** (90min timed): Basic table with sorting
-- Night: Add pagination, filtering + 2 algo problems
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: CSS animations, transitions, conditional rendering |
+| 7:30 - 8:00 | 💻 **⏱️ CHALLENGE 04 TIMED (30min)**: Accordion with smooth animations |
+| 8:00 - 9:00 | 💻 Complete: Keyboard navigation, multi-open mode |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 **REVIEW**: Test accessibility, improve transitions |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Easy + 1 Medium attempt + Anki |
 
-**Day 31 — Tuesday, Feb 18**
-- Morning: Performance optimization patterns
-- Afternoon: **Challenge 11 Part 2**: Column filtering, multi-sort
-- Evening: Add search, export to CSV
-- Night: 3 algo problems + review
-
-**Day 32 — Wednesday, Feb 19** 🧘‍♀️ PILATES
-- Morning: Accessibility for tables
-- Afternoon: **Challenge 11 Part 3**: Polish, responsive, a11y
-- Evening: PILATES
-- Night: Final testing + 2 algo problems
-
----
-
-### Days 33-34: 🏆 CHALLENGE 12 - Kanban Board (Split over 2 days)
-**Location**: `frontend-interview-practice/12-kanban-board/`
-
-**Day 33 — Thursday, Feb 20**
-- Morning: Drag-drop libraries: react-beautiful-dnd, dnd-kit
-- Afternoon: **Challenge 12 Part 1** (90min timed): Basic kanban with 3 columns
-- Evening: Add drag-drop between columns
-- Night: 3 algo problems
-
-**Day 34 — Friday, Feb 21**
-- Morning: Complex state for nested data
-- Afternoon: **Challenge 12 Part 2**: Add card editing, localStorage
-- Evening: Polish animations, add labels/tags
-- Night: 3 algo problems + review
+**MOCHEONG Progress**: AI agent integrated with chat
+**Frontend Progress**: Challenge 04 complete ✅ (4/15), 3 algo problems
+**📍 Challenge Location**: `frontend-interview-practice/04-accordion/`
 
 ---
 
-### Weekend — Feb 22-23 🎉 REST
+### Day 7 — Tuesday, Feb 4
+**🚀 MOCHEONG: Agent Tools + Map Integration | 💻 Challenge 05 - Modal**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Agent tools for Kakao Map (route planning) |
+| 9:15 - 12:00 | 🚀 Agent: Create Kakao Map tools (get directions, nearby places) |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Agent: Implement multi-agent orchestration for complex queries |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Frontend: Display agent responses in chat, show route info |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:45 | 💻 Review: Focus management, portals, accessibility |
+| 7:45 - 8:30 | 💻 **⏱️ CHALLENGE 05 TIMED (45min)**: Modal with focus trap |
+| 8:30 - 9:30 | 💻 Complete: Escape key, click outside, body scroll lock |
+| 9:30 - 10:00 | 🚶 Break |
+| 10:00 - 11:00 | 💻 **REVIEW**: Test all keyboard interactions, improve a11y |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Easy + 1 Medium + Anki |
+
+**MOCHEONG Progress**: AI can provide route directions!
+**Frontend Progress**: Challenge 05 complete ✅ (5/15), 3 algo problems
+**📍 Challenge Location**: `frontend-interview-practice/05-modal-dialog/`
+**🎉 5/15 Basic Challenges Complete!**
 
 ---
 
-### Days 35-36: 🏆 CHALLENGE 13 - Markdown Editor (Split over 2 days)
-**Location**: `frontend-interview-practice/13-markdown-editor/`
+### Day 8 — Wednesday, Feb 5
+**🚀 MOCHEONG: File Upload + S3 | 💻 Challenge 06 - Autocomplete**
 
-**Day 35 — Monday, Feb 24**
-- Morning: Markdown libraries: marked, react-markdown
-- Afternoon: **Challenge 13 Part 1** (75min timed): Editor + live preview
-- Evening: Add toolbar, formatting buttons
-- Night: 3 algo problems
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: File upload flow (photos, documents) |
+| 9:15 - 12:00 | 🚀 Backend: File module, AWS S3 integration, upload endpoints |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Photo gallery component, drag-drop upload UI |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Integration: Connect upload to gallery, test S3 flow |
 
-**Day 36 — Tuesday, Feb 25**
-- Morning: Syntax highlighting: Prism, highlight.js
-- Afternoon: **Challenge 13 Part 2**: Add syntax highlighting, export
-- Evening: File import, dark mode
-- Night: 3 algo problems + review
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:45 | 💻 Review: Debouncing, API calls, keyboard navigation |
+| 7:45 - 8:30 | 💻 **⏱️ CHALLENGE 06 TIMED (45min)**: Autocomplete with debouncing |
+| 8:30 - 9:30 | 💻 Complete: Keyboard nav, highlight matching text |
+| 9:30 - 10:00 | 🚶 Break |
+| 10:00 - 11:00 | 💻 **REVIEW**: Test edge cases, optimize performance |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium problems + Review |
 
----
-
-### Days 37-38: 🏆 CHALLENGE 14 - Chat Interface (Split over 2 days)
-**Location**: `frontend-interview-practice/14-chat-interface/`
-
-**Day 37 — Wednesday, Feb 26** 🧘‍♀️ PILATES
-- Morning: Chat UI patterns, message grouping
-- Afternoon: **Challenge 14 Part 1** (75min timed): Basic chat with messages
-- Evening: PILATES
-- Night: Auto-scroll, timestamps + 2 algo problems
-
-**Day 38 — Thursday, Feb 27**
-- Morning: Real-time with WebSocket (study only)
-- Afternoon: **Challenge 14 Part 2**: Add avatars, reactions, edit/delete
-- Evening: Message search, user list sidebar
-- Night: 3 algo problems + review
+**MOCHEONG Progress**: Photo gallery with S3 upload working
+**Frontend Progress**: Challenge 06 complete ✅ (6/15), 2 Medium algo problems
+**📍 Challenge Location**: `frontend-interview-practice/06-autocomplete/`
 
 ---
 
-### Days 39-41: 🏆 CHALLENGE 15 - Dashboard (Split over 3 days)
-**Location**: `frontend-interview-practice/15-dashboard/`
+### Day 9 — Thursday, Feb 6 🎨 CREATIVE VIBE CODING LAB
+**🚀 MOCHEONG: RSVP + Guest Management | 💻 Light Review (Lab Night)**
 
-**Day 39 — Friday, Feb 28**
-- Morning: Chart libraries: Recharts, Chart.js
-- Afternoon: **Challenge 15 Part 1** (90min timed): Layout + stat cards
-- Evening: Add one chart (line or bar)
-- Night: 3 algo problems
+**DAYTIME (9 AM - 5:30 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: RSVP system, guest attendance tracking |
+| 9:15 - 12:00 | 🚀 Backend: Guest entity, RSVP endpoints, attendance counting |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: RSVP form, guest list admin view |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 5:30 | 🚀 Integration: Test RSVP flow end-to-end |
 
-**Day 40 — Monday, Mar 3** (Weekend rest before this)
-- Morning: Responsive grid layouts
-- Afternoon: **Challenge 15 Part 2**: Add activity list, user table
-- Evening: Add date filter, refresh button
-- Night: 3 algo problems
+**EVENING (5:30 PM - 1 AM): Creative Lab + Light Prep**
+| Time | Task |
+|------|------|
+| 5:30 - 6:30 | 🍽️ Early Dinner + Prep for lab |
+| 6:30 - 10:00 | 🎨 **CREATIVE VIBE CODING LAB** — AI-powered creative coding |
+| 10:00 - 11:00 | 🚶 Travel home, decompress |
+| 11:00 - 12:00 | 💻 Light review: Redo Challenge 04 or 05 from memory |
+| 12:00 - 1:00 | 🧠 Light algorithms: 2 Easy OR review Medium solutions |
 
-**Day 41 — Tuesday, Mar 4**
-- Morning: Dashboard polish patterns
-- Afternoon: **Challenge 15 Part 3**: Add second chart, loading states
-- Evening: Error handling, polish design
-- Night: **Final review + celebrate!** 🎉
-
-**🎉 ALL 15 CHALLENGES COMPLETE! 🎉**
+**MOCHEONG Progress**: RSVP system complete
+**Frontend Progress**: Challenge review, light algo (lighter day)
 
 ---
 
-## PHASE 5: Interview Prep & Applications (Week 10+)
+### Day 10 — Friday, Feb 7
+**🚀 MOCHEONG: Quiz Feature + Admin Panel | 💻 Challenge 07 - Infinite Scroll**
 
-### Days 42-50: Mock Interviews + Applications
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Wedding quiz feature, admin dashboard |
+| 9:15 - 12:00 | 🚀 Backend: Quiz entity, question/answer endpoints |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Quiz component with timer, scoring, results |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Admin: Basic admin panel for managing guests, quiz questions |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:45 | 💻 Review: Intersection Observer API, pagination |
+| 7:45 - 8:30 | 💻 **⏱️ CHALLENGE 07 TIMED (45min)**: Infinite scroll with observer |
+| 8:30 - 9:30 | 💻 Complete: Skeleton loading, error retry, scroll to top |
+| 9:30 - 10:00 | 🚶 Break |
+| 10:00 - 11:00 | 💻 **REVIEW**: Test with slow network, improve UX |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + Review + Anki |
+
+**MOCHEONG Progress**: Quiz + Admin panel working!
+**Frontend Progress**: Challenge 07 complete ✅ (7/15), 2 Medium algo problems
+**📍 Challenge Location**: `frontend-interview-practice/07-infinite-scroll/`
+
+---
+
+### Weekend — Feb 8-9 (Sat-Sun) 🎉 REST DAYS
+**Complete rest. Week 2 done!**
+**Progress Check**: 7/15 challenges, MOCHEONG has core features working
+
+---
+
+## PHASE 2: MOCHEONG Core Complete + Intermediate Challenges (Week 3-4)
+
+### Week 3: Feb 10-14
+
+---
+
+### Day 11 — Monday, Feb 10
+**🚀 MOCHEONG: Payment Integration | 💻 Challenge 08 - Image Carousel**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Payment system architecture (for future monetization) |
+| 9:15 - 12:00 | 🚀 Backend: Payment module skeleton, webhook endpoints |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Payment UI components (can be mock for now) |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Testing: Write unit tests for auth and chat modules |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:50 | 💻 Review: CSS animations, touch events, image optimization |
+| 7:50 - 8:40 | 💻 **⏱️ CHALLENGE 08 TIMED (50min)**: Image carousel with animations |
+| 8:40 - 9:30 | 💻 Complete: Auto-play, thumbnail preview, swipe gestures |
+| 9:30 - 10:00 | 🚶 Break |
+| 10:00 - 11:00 | 💻 **REVIEW**: Test on mobile viewport, improve touch handling |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + Review |
+
+**MOCHEONG Progress**: Payment foundation + tests
+**Frontend Progress**: Challenge 08 complete ✅ (8/15), 2 Medium algo problems
+**📍 Challenge Location**: `frontend-interview-practice/08-image-carousel/`
+
+---
+
+### Day 12 — Tuesday, Feb 11
+**🚀 MOCHEONG: Performance Optimization | 💻 Challenge 09 - Form Validation**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Performance audit and optimization |
+| 9:15 - 12:00 | 🚀 Frontend: React.memo, useMemo, useCallback optimization |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Backend: Add caching with Redis, optimize database queries |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Testing: Load testing, identify bottlenecks |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 8:00 | 💻 Review: Form patterns, validation, accessibility |
+| 8:00 - 9:00 | 💻 **⏱️ CHALLENGE 09 TIMED (60min)**: Multi-field form validation |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 10:30 | 💻 Complete: Password strength meter, async email check |
+| 10:30 - 11:00 | 🚶 Break |
+| 11:00 - 1:00 | 🧠 **Algorithms**: 2 Medium + 1 Hard attempt |
+
+**MOCHEONG Progress**: App optimized for performance
+**Frontend Progress**: Challenge 09 complete ✅ (9/15), 3 algo problems
+**📍 Challenge Location**: `frontend-interview-practice/09-form-validation/`
+
+---
+
+### Day 13 — Wednesday, Feb 12
+**🚀 MOCHEONG: Celery + Background Tasks | 💻 Challenge 10 - Drag and Drop**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Background task processing with Celery |
+| 9:15 - 12:00 | 🚀 Agent: Setup Celery with Redis broker, create async tasks |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Agent: Implement progress streaming for long AI operations |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Frontend: Display task progress in UI, handle long operations |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 8:00 | 💻 Review: Drag and Drop API, mouse/touch events |
+| 8:00 - 9:00 | 💻 **⏱️ CHALLENGE 10 TIMED (60min)**: Drag-drop reorderable list |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 10:30 | 💻 Complete: Ghost preview, drop zones, animations |
+| 10:30 - 11:00 | 🚶 Break |
+| 11:00 - 1:00 | 🧠 **Algorithms**: 2 Medium + Review |
+
+**MOCHEONG Progress**: Background tasks with progress tracking
+**Frontend Progress**: Challenge 10 complete ✅ (10/15), 2 Medium algo problems
+**📍 Challenge Location**: `frontend-interview-practice/10-drag-and-drop/`
+**🎉 10/15 Challenges Complete!** (Basic + Intermediate done)
+
+---
+
+### Day 14 — Thursday, Feb 13 🎨 CREATIVE VIBE CODING LAB
+**🚀 MOCHEONG: Docker Production Setup | 💻 Light Review (Lab Night)**
+
+**DAYTIME (9 AM - 5:30 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Production Docker configuration |
+| 9:15 - 12:00 | 🚀 DevOps: Optimize Dockerfile, multi-stage builds |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 DevOps: docker-compose production config, environment management |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 5:30 | 🚀 Testing: Test full stack with docker-compose up |
+
+**EVENING (5:30 PM - 1 AM): Creative Lab + Light Prep**
+| Time | Task |
+|------|------|
+| 5:30 - 6:30 | 🍽️ Early Dinner + Prep for lab |
+| 6:30 - 10:00 | 🎨 **CREATIVE VIBE CODING LAB** — AI-powered creative coding |
+| 10:00 - 11:00 | 🚶 Travel home |
+| 11:00 - 12:00 | 💻 Redo Challenge 06 or 07 from memory |
+| 12:00 - 1:00 | 🧠 Light algo: 2 Easy OR review solutions |
+
+**MOCHEONG Progress**: Production Docker ready
+**Frontend Progress**: Challenge review, light algo
+
+---
+
+### Day 15 — Friday, Feb 14
+**🚀 MOCHEONG: E2E Testing + Documentation | 💻 Week Review + Algo Intensive**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Testing strategy and documentation |
+| 9:15 - 12:00 | 🚀 Testing: Write E2E tests for critical user flows |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Documentation: Update README, API docs, deployment guide |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 **MILESTONE CHECK**: Review MOCHEONG progress, plan next phase |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **WEEK REVIEW**: Redo 2 random challenges (1-10) from memory |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 🧠 **Algorithms**: 3 Medium problems |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 1 Hard attempt + Review all week |
+
+**MOCHEONG Progress**: Core features complete, tested, documented!
+**Frontend Progress**: 10/15 challenges, solid algorithm foundation
+
+---
+
+### Weekend — Feb 15-16 (Sat-Sun) 🎉 REST DAYS
+**Week 3 complete! MOCHEONG core done, 10 challenges finished!**
+
+---
+
+### Week 4: Feb 17-21
+
+---
+
+### Day 16 — Monday, Feb 17
+**🚀 MOCHEONG: Advanced Agent Features | 💻 Challenge 11 - Data Table (Part 1)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Multi-agent orchestration, complex queries |
+| 9:15 - 12:00 | 🚀 Agent: Build output agents for structured data generation |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Agent: Implement trajectory testing, agent validation |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Integration: Connect advanced agents to chat interface |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: Table patterns, sorting, pagination |
+| 7:30 - 9:00 | 💻 **⏱️ CHALLENGE 11 Part 1 (90min)**: Basic data table with sorting |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Continue: Add pagination, basic filtering |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + Review |
+
+**MOCHEONG Progress**: Advanced multi-agent system
+**Frontend Progress**: Challenge 11 Part 1 complete
+**📍 Challenge Location**: `frontend-interview-practice/11-data-table/`
+
+---
+
+### Day 17 — Tuesday, Feb 18
+**🚀 MOCHEONG: Real-time Notifications | 💻 Challenge 11 - Data Table (Part 2)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Real-time notification system |
+| 9:15 - 12:00 | 🚀 Backend: Notification entity, WebSocket events for updates |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Notification bell, toast messages, notification list |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Integration: Test real-time notifications end-to-end |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **CHALLENGE 11 Part 2**: Column filtering, multi-sort, search |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Complete: Export to CSV, keyboard navigation |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 3 Medium + Review |
+
+**MOCHEONG Progress**: Real-time notifications working
+**Frontend Progress**: Challenge 11 complete ✅ (11/15)
+
+---
+
+### Day 18 — Wednesday, Feb 19
+**🚀 MOCHEONG: Mobile Responsive | 💻 Challenge 12 - Kanban Board (Part 1)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Mobile responsive design audit |
+| 9:15 - 12:00 | 🚀 Frontend: Make invitation page fully responsive |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Frontend: Make chat interface mobile-friendly |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Testing: Test on multiple device sizes, fix issues |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: Drag-drop libraries, complex state |
+| 7:30 - 9:00 | 💻 **⏱️ CHALLENGE 12 Part 1 (90min)**: Basic kanban with 3 columns |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Continue: Drag-drop between columns |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + 1 Hard attempt |
+
+**MOCHEONG Progress**: Mobile responsive design complete
+**Frontend Progress**: Challenge 12 Part 1 complete
+**📍 Challenge Location**: `frontend-interview-practice/12-kanban-board/`
+
+---
+
+### Day 19 — Thursday, Feb 20 🎨 CREATIVE VIBE CODING LAB
+**🚀 MOCHEONG: Polish & Bug Fixes | 💻 Light Review (Lab Night)**
+
+**DAYTIME (9 AM - 5:30 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Bug bash and polish |
+| 9:15 - 12:00 | 🚀 Bug fixes: Address known issues, edge cases |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Polish: UI improvements, animations, micro-interactions |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 5:30 | 🚀 Code review: Clean up code, remove dead code |
+
+**EVENING (5:30 PM - 1 AM): Creative Lab + Light Prep**
+| Time | Task |
+|------|------|
+| 5:30 - 6:30 | 🍽️ Early Dinner + Prep |
+| 6:30 - 10:00 | 🎨 **CREATIVE VIBE CODING LAB** |
+| 10:00 - 11:00 | 🚶 Travel home |
+| 11:00 - 12:00 | 💻 Redo Challenge 08 or 09 from memory |
+| 12:00 - 1:00 | 🧠 Light algo: 2 Easy OR review |
+
+**MOCHEONG Progress**: Bug-free and polished
+**Frontend Progress**: Challenge review, light algo
+
+---
+
+### Day 20 — Friday, Feb 21
+**🚀 MOCHEONG: Deployment Prep | 💻 Challenge 12 - Kanban Board (Part 2)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Deployment strategy |
+| 9:15 - 12:00 | 🚀 DevOps: Set up CI/CD pipeline (GitHub Actions) |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 DevOps: Configure staging environment |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Testing: Deploy to staging, smoke tests |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **CHALLENGE 12 Part 2**: Card editing, localStorage, labels/tags |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Complete: Polish animations, keyboard shortcuts |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 3 Medium + Review |
+
+**MOCHEONG Progress**: CI/CD and staging ready!
+**Frontend Progress**: Challenge 12 complete ✅ (12/15)
+
+---
+
+### Weekend — Feb 22-23 (Sat-Sun) 🎉 REST DAYS
+**Week 4 complete! 12/15 challenges, MOCHEONG almost production-ready!**
+
+---
+
+## PHASE 3: MOCHEONG Launch + Advanced Challenges (Week 5-6)
+
+### Week 5: Feb 24-28
+
+---
+
+### Day 21 — Monday, Feb 24
+**🚀 MOCHEONG: Production Deployment | 💻 Challenge 13 - Markdown Editor (Part 1)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Production deployment |
+| 9:15 - 12:00 | 🚀 DevOps: Deploy to production (AWS/Vercel/Railway) |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 DevOps: Configure production environment, SSL, domain |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Testing: Production smoke tests, monitor for issues |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: Markdown parsing, live preview patterns |
+| 7:30 - 8:45 | 💻 **⏱️ CHALLENGE 13 Part 1 (75min)**: Markdown editor + live preview |
+| 8:45 - 9:15 | 🚶 Break |
+| 9:15 - 10:30 | 💻 Continue: Toolbar, formatting buttons |
+| 10:30 - 11:00 | 🚶 Break |
+| 11:00 - 1:00 | 🧠 **Algorithms**: 3 Medium + Review |
+
+**MOCHEONG Progress**: 🚀 LIVE IN PRODUCTION!
+**Frontend Progress**: Challenge 13 Part 1 complete
+**📍 Challenge Location**: `frontend-interview-practice/13-markdown-editor/`
+
+---
+
+### Day 22 — Tuesday, Feb 25
+**🚀 MOCHEONG: Monitoring & Analytics | 💻 Challenge 13 - Markdown Editor (Part 2)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Monitoring and analytics setup |
+| 9:15 - 12:00 | 🚀 DevOps: Set up logging (Winston), error tracking (Sentry) |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Analytics: Add basic analytics, track user interactions |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Monitoring: Set up health checks, alerts |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **CHALLENGE 13 Part 2**: Syntax highlighting, export, dark mode |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Complete: File import, polish UI |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + 1 Hard |
+
+**MOCHEONG Progress**: Production monitoring in place
+**Frontend Progress**: Challenge 13 complete ✅ (13/15)
+
+---
+
+### Day 23 — Wednesday, Feb 26
+**🚀 MOCHEONG: User Feedback & Iteration | 💻 Challenge 14 - Chat Interface (Part 1)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Gather user feedback, plan improvements |
+| 9:15 - 12:00 | 🚀 Features: Implement top-priority user feedback items |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Bug fixes: Address production issues, edge cases |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Polish: Minor UI/UX improvements based on feedback |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: Chat UI patterns, message components |
+| 7:30 - 8:45 | 💻 **⏱️ CHALLENGE 14 Part 1 (75min)**: Basic chat with messages |
+| 8:45 - 9:15 | 🚶 Break |
+| 9:15 - 10:30 | 💻 Continue: Auto-scroll, timestamps, avatars |
+| 10:30 - 11:00 | 🚶 Break |
+| 11:00 - 1:00 | 🧠 **Algorithms**: 3 Medium + Review |
+
+**MOCHEONG Progress**: User feedback incorporated
+**Frontend Progress**: Challenge 14 Part 1 complete
+**📍 Challenge Location**: `frontend-interview-practice/14-chat-interface/`
+
+---
+
+### Day 24 — Thursday, Feb 27 🎨 CREATIVE VIBE CODING LAB
+**🚀 MOCHEONG: Security Audit | 💻 Light Review (Lab Night)**
+
+**DAYTIME (9 AM - 5:30 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Security audit checklist |
+| 9:15 - 12:00 | 🚀 Security: Review auth, input validation, XSS/CSRF protection |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Security: Environment variables, secrets management |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 5:30 | 🚀 Security: Review API endpoints, rate limiting |
+
+**EVENING (5:30 PM - 1 AM): Creative Lab + Light Prep**
+| Time | Task |
+|------|------|
+| 5:30 - 6:30 | 🍽️ Early Dinner + Prep |
+| 6:30 - 10:00 | 🎨 **CREATIVE VIBE CODING LAB** |
+| 10:00 - 11:00 | 🚶 Travel home |
+| 11:00 - 12:00 | 💻 Redo Challenge 10 or 11 from memory |
+| 12:00 - 1:00 | 🧠 Light algo: Review Hard problem solutions |
+
+**MOCHEONG Progress**: Security audit complete
+**Frontend Progress**: Challenge review
+
+---
+
+### Day 25 — Friday, Feb 28
+**🚀 MOCHEONG: Performance Monitoring | 💻 Challenge 14 - Chat Interface (Part 2)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Performance monitoring in production |
+| 9:15 - 12:00 | 🚀 Performance: Add APM, track slow queries, API latency |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Optimization: Address any performance issues found |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Documentation: Update docs with production learnings |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **CHALLENGE 14 Part 2**: Reactions, edit/delete, search |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Complete: User list sidebar, typing indicator |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + 1 Hard attempt |
+
+**MOCHEONG Progress**: Production performance optimized
+**Frontend Progress**: Challenge 14 complete ✅ (14/15)
+
+---
+
+### Weekend — Mar 1-2 (Sat-Sun) 🎉 REST DAYS
+**Week 5 complete! MOCHEONG live, 14/15 challenges done!**
+
+---
+
+### Week 6: Mar 3-7
+
+---
+
+### Day 26 — Monday, Mar 3
+**🚀 MOCHEONG: Feature Complete Review | 💻 Challenge 15 - Dashboard (Part 1)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Final feature review |
+| 9:15 - 12:00 | 🚀 Review: Complete feature audit, ensure all specs met |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Polish: Final UI/UX refinements |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Content: Add wedding content, test with real data |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 7:30 | 💻 Review: Chart libraries, dashboard layouts |
+| 7:30 - 9:00 | 💻 **⏱️ CHALLENGE 15 Part 1 (90min)**: Layout + stat cards |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Continue: Add first chart (line or bar) |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 3 Medium + Review |
+
+**MOCHEONG Progress**: Feature complete!
+**Frontend Progress**: Challenge 15 Part 1 complete
+**📍 Challenge Location**: `frontend-interview-practice/15-dashboard/`
+
+---
+
+### Day 27 — Tuesday, Mar 4
+**🚀 MOCHEONG: Final Testing | 💻 Challenge 15 - Dashboard (Part 2)**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Comprehensive testing |
+| 9:15 - 12:00 | 🚀 Testing: Full E2E test suite, cross-browser testing |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Testing: Mobile testing, accessibility audit |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Bug fixes: Address any issues found in testing |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **CHALLENGE 15 Part 2**: Activity list, data table, filters |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 Complete: Second chart, date filter, refresh |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 2 Medium + 1 Hard |
+
+**MOCHEONG Progress**: Fully tested!
+**Frontend Progress**: Challenge 15 complete ✅ (15/15) 🎉
+
+---
+
+### Day 28 — Wednesday, Mar 5
+**🚀 MOCHEONG: Portfolio Case Study | 💻 All Challenges Complete - Mock Interview**
+
+**DAYTIME (9 AM - 6 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Create portfolio case study |
+| 9:15 - 12:00 | 🚀 Portfolio: Write MOCHEONG case study (problem, solution, tech) |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Portfolio: Create screenshots, diagrams, demo video |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 🚀 Portfolio: Add to personal portfolio site |
+
+**EVENING (6 PM - 1 AM): Frontend Interview Prep**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **MOCK INTERVIEW**: Pick random challenge, time yourself strictly |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 💻 **MOCK INTERVIEW**: Another random challenge |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 🧠 **Algorithms**: 3 Hard attempts + Review |
+
+**MOCHEONG Progress**: Portfolio case study done!
+**Frontend Progress**: 🎉 ALL 15 CHALLENGES COMPLETE! Mock interview practice
+
+---
+
+### Day 29 — Thursday, Mar 6 🎨 CREATIVE VIBE CODING LAB
+**🚀 MOCHEONG: Project Complete! | 💻 Light Review (Lab Night)**
+
+**DAYTIME (9 AM - 5:30 PM): MOCHEONG Side Project**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | 🎉 **PROJECT COMPLETE!** Final review |
+| 9:15 - 12:00 | 🚀 Final: Create project demo, record walkthrough video |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 🚀 Documentation: Final README updates, architecture diagram |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 5:30 | 🚀 GitHub: Clean up repo, add badges, make public |
+
+**EVENING (5:30 PM - 1 AM): Creative Lab + Light Prep**
+| Time | Task |
+|------|------|
+| 5:30 - 6:30 | 🍽️ Early Dinner + Prep |
+| 6:30 - 10:00 | 🎨 **CREATIVE VIBE CODING LAB** |
+| 10:00 - 11:00 | 🚶 Travel home |
+| 11:00 - 12:00 | 💻 Redo random challenge from memory |
+| 12:00 - 1:00 | 🧠 Light algo: Review solutions |
+
+**MOCHEONG Progress**: 🎉 PROJECT COMPLETE AND DOCUMENTED!
+**Frontend Progress**: Challenge review
+
+---
+
+### Day 30 — Friday, Mar 7
+**🎯 Interview Prep Intensive | Both Tracks Merge for Job Search**
+
+**DAYTIME (9 AM - 6 PM): Interview Preparation**
+| Time | Task |
+|------|------|
+| 9:00 - 9:15 | Plan: Create job application tracker |
+| 9:15 - 12:00 | 📝 Resume: Update with MOCHEONG project, quantify achievements |
+| 12:00 - 1:00 | 🍽️ Lunch |
+| 1:00 - 3:30 | 📝 Portfolio: Polish portfolio site, add all 15 challenges |
+| 3:30 - 4:00 | 🚶 Break |
+| 4:00 - 6:00 | 📝 LinkedIn: Update profile, connect with recruiters |
+
+**EVENING (6 PM - 1 AM): Interview Practice**
+| Time | Task |
+|------|------|
+| 6:00 - 7:00 | 🍽️ Dinner |
+| 7:00 - 9:00 | 💻 **MOCK INTERVIEW**: Full frontend interview simulation |
+| 9:00 - 9:30 | 🚶 Break |
+| 9:30 - 11:00 | 🧠 **Algorithms**: 2 Medium + 2 Hard |
+| 11:00 - 11:30 | 🚶 Break |
+| 11:30 - 1:00 | 📝 Behavioral: STAR method practice, common questions |
+
+**Progress**: Ready for job applications!
+
+---
+
+### Weekend — Mar 8-9 (Sat-Sun) 🎉 REST DAYS
+**Week 6 complete! MOCHEONG done, all challenges done, ready for interviews!**
+
+---
+
+## PHASE 4: Interview Prep & Applications (Week 7-10)
+
+### Days 31-50: Job Search Intensive
+
+**Daily Structure (Week 7 onwards):**
+
+| Time | Duration | Activity |
+|------|----------|----------|
+| 9:00 - 12:00 | 3 hrs | 📝 Job Applications (research, apply, follow up) |
+| 12:00 - 1:00 | 1 hr | 🍽️ Lunch |
+| 1:00 - 3:00 | 2 hrs | 🧠 Algorithm Practice (3-4 Medium/Hard problems) |
+| 3:00 - 3:30 | 30 min | 🚶 Break |
+| 3:30 - 5:30 | 2 hrs | 💻 Mock Interviews (Frontend challenges from 1-15) |
+| 5:30 - 6:00 | 30 min | 🚶 Break |
+| 6:00 - 7:00 | 1 hr | 🍽️ Dinner |
+| 7:00 - 9:00 | 2 hrs | 📝 Behavioral Prep (STAR stories, company research) |
+| 9:00 - 9:30 | 30 min | 🚶 Break |
+| 9:30 - 11:00 | 1.5 hrs | 💻 Portfolio Polish OR System Design Study |
+| 11:00 - 1:00 | 2 hrs | 🧠 Algorithm Review + Anki |
+
+**Thursday remains Creative Vibe Coding Lab day with lighter schedule**
 
 **Frontend Mock Interview Structure** (use challenges as material):
 - Pick random challenge (1-15)
@@ -643,21 +1119,15 @@ This schedule now includes **15 specific implementation challenges** from `front
 - Code on camera/screen share (practice explaining)
 - Review: What went well? What was hard?
 
-**Schedule Pattern Days 42-50:**
-- Morning: Algorithm practice (4-5 problems, increasing Medium difficulty)
-- Afternoon: Applications (3-5 per day) + Portfolio polish
-- Evening: Mock interview (1 frontend challenge OR 1 behavioral + 2 algo)
-- Night: Review + Anki
-
 **Key Activities:**
-- **Applications**: Apply to 3-5 companies per day
+- **Applications**: Apply to 3-5 companies per day (50-75 total by Day 50)
 - **Mock Interviews**:
   - Self-timed: Redo challenges 1-15 randomly
   - Peer mock: Practice with another person if possible
   - Record yourself: Review communication
 - **Behavioral Prep**: STAR method, company research
-- **Portfolio**: Deploy all 15 challenges to portfolio site
-- **LinkedIn**: Share challenge screenshots, learnings
+- **Portfolio**: MOCHEONG project + all 15 challenges deployed
+- **LinkedIn**: Share project progress, connect with recruiters
 
 ---
 
@@ -719,38 +1189,74 @@ Use `frontend-interview-practice/PRACTICE_TRACKER.md`:
 
 ## Key Milestones
 
-- ✅ **Day 3**: First timed challenge (Todo)
-- ✅ **Day 8**: 5 Basic challenges complete
-- ✅ **Day 10**: Dual track starts (React + Algo)
-- ✅ **Day 15**: 10 challenges complete (Basic + Intermediate)
-- ✅ **Day 29**: Algorithm foundation solid
-- ✅ **Day 41**: All 15 challenges complete!
-- ✅ **Day 50**: Ready for interviews
+**MOCHEONG Side Project:**
+- ✅ **Day 1**: Project setup and architecture
+- ✅ **Day 5**: Real-time chat working end-to-end
+- ✅ **Day 10**: Quiz + Admin panel complete
+- ✅ **Day 15**: E2E tests + documentation
+- ✅ **Day 20**: CI/CD + staging environment
+- ✅ **Day 24**: 🚀 Production deployment!
+- ✅ **Day 29**: 🎉 Project complete + portfolio case study
+
+**Frontend Interview Challenges:**
+- ✅ **Day 2**: Challenge 01 (Todo List) - first challenge!
+- ✅ **Day 7**: Challenges 01-05 complete (Basic)
+- ✅ **Day 13**: Challenges 06-10 complete (Intermediate) 🎉
+- ✅ **Day 20**: Challenges 11-12 complete
+- ✅ **Day 27**: Challenges 13-15 complete 🎉 ALL DONE!
+
+**Job Search:**
+- ✅ **Day 30**: Resume + portfolio ready
+- ✅ **Day 50**: Interview ready, 50+ applications sent
 
 ---
 
 ## Summary Statistics
 
-**Total Study Days**: 50 days (35 active study days, 15 rest days)
-**React Challenges**: 15 specific implementation challenges
-**Challenge Time**: ~18 hours of timed challenges
-**Algorithm Problems**: 100-150 problems
-**Mock Interviews**: 15-20 mock sessions
-**Applications**: 50-75 companies
+**Total Duration**: 50 days (35 active weekdays, 15 rest days on weekends)
 
-**Skill Targets**:
-- ✅ React: Production-ready implementation skills
-- ✅ Algorithms: Baekjoon Silver 3, Programmers Level 2-3, LeetCode Medium
-- ✅ Interviews: Confident in 30-90min implementation tests
-- ✅ Portfolio: 15 deployable projects
+**MOCHEONG Side Project (Daytime Track):**
+- ~7-8 hours/day × 30 days = ~220 hours on side project
+- Full-stack: React + NestJS + FastAPI + PostgreSQL + Redis
+- AI integration: LangChain + OpenAI + multi-agent system
+- Production deployed with CI/CD
+
+**Frontend Interview Prep (Evening Track):**
+- ~5-6 hours/day × 30 days = ~165 hours on interview prep
+- 15 timed implementation challenges complete
+- ~18 hours of timed challenge practice
+- 80-120 algorithm problems solved
+
+**Combined Output:**
+- 1 production full-stack application (MOCHEONG)
+- 15 deployable frontend challenges
+- 80-120 algorithm problems
+- 50-75 job applications
+- Strong portfolio with real-world AI project experience
+
+**Skill Targets:**
+- ✅ **Full-Stack**: Production-ready with React, NestJS, AI agents
+- ✅ **React**: Master of 15 common interview components
+- ✅ **Algorithms**: Baekjoon Silver, Programmers Level 2-3, LeetCode Medium
+- ✅ **Interviews**: Confident in 30-90min implementation tests
+- ✅ **Portfolio**: Major full-stack project + 15 frontend challenges
 
 ---
 
 ## Notes
 
-**All challenge locations**: `frontend-interview-practice/[01-15]-[challenge-name]/`
+**MOCHEONG Side Project**:
+```bash
+# Start all services
+cd mocheong
+./setup-env.sh
+docker-compose up --build
+```
+- Frontend: http://localhost:3000
+- Backend: http://localhost:3001
+- Agent Manager: http://localhost:8000
 
-**To start any challenge**:
+**Frontend Challenges**:
 ```bash
 cd frontend-interview-practice/[challenge-name]
 npm install
@@ -758,11 +1264,18 @@ npm run dev
 # Open http://localhost:5173
 ```
 
+**Thursday = Creative Vibe Coding Lab**:
+- 6:30 PM - 10 PM at the lab
+- Home by 11:00-11:30 PM
+- Lighter evening study (2 hours instead of 6)
+
 **Remember**:
+- **Daytime (9 AM - 6 PM)**: Focus 100% on MOCHEONG side project
+- **Evening (6 PM onwards)**: Switch to frontend interview prep
+- **Thursdays**: Creative Vibe Coding Lab - embrace the lighter evening
 - Time yourself strictly during challenges
 - Test all features before considering complete
-- Update PRACTICE_TRACKER.md after each challenge
-- Review QUICK_REFERENCE.md for common patterns
 - Rest on weekends - consistency beats intensity
+- You're building real full-stack experience + interview skills simultaneously!
 
-**You've got this! 🚀**
+**You've got this! 🚀 Build MOCHEONG by day, ace interviews by night!**

@@ -372,7 +372,7 @@ grep -r "TypeScript" company-prep/
 
 ## 🔗 Related Resources
 
-- **Main Schedule**: `../schedules/50_Day_Adjusted_Schedule_v2.md`
+- **Main Schedule**: `../schedules/50_Day_Adjusted_Schedule_v7.md`
 - **All Challenges**: `../frontend-interview-practice/README.md`
 - **Daily Tracking**: `../daily-logs/`
 - **Main README**: `../README.md`

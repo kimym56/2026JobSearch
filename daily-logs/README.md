@@ -102,7 +102,7 @@ Each log should include:
 # Day 3 — Tuesday, Jan 13
 
 **Date**: January 13, 2026
-**Schedule**: 50_Day_Adjusted_Schedule_v2.md - Day 3
+**Schedule**: 50_Day_Adjusted_Schedule_v7.md - Day 3
 **Status**: Work day (part-time)
 
 ## Goals for Today
@@ -317,7 +317,7 @@ ls daily-logs/Day*.md | wc -l
 
 ## 🔗 Related Files
 
-- **Schedule**: `../schedules/50_Day_Adjusted_Schedule_v2.md`
+- **Schedule**: `../schedules/50_Day_Adjusted_Schedule_v7.md`
 - **Challenge Tracker**: `../frontend-interview-practice/PRACTICE_TRACKER.md`
 - **Main README**: `../README.md`
 

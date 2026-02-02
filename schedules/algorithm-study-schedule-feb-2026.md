@@ -1,0 +1,48 @@
+# Algorithm Study Schedule (LeetCode) — Feb 2026
+
+Start date: Monday, Feb 02, 2026
+End date: Friday, Feb 27, 2026
+No study on weekends or Feb 16–18 (Korean holiday).
+
+## Rules
+
+- 3 people total (Person A, Person B, Person C).
+- Each study day: same category for everyone, but each person solves **2 different problems**.
+- Target: 2 problems per person per day (total 6 problems/day).
+- Use LeetCode; choose problems with similar difficulty per person.
+- Difficulty tags: E = Easy, M = Medium, H = Hard.
+- Checkbox legend: `[ ]` not started, `[x]` solved, `[~]` needs review.
+- Timebox per problem: 35 minutes (hard stop, then review/learn).
+- Daily review: 10–15 minutes to revisit 1 previous mistake/problem.
+- Weekly timed set: once per week, 2 problems in 60–75 minutes.
+- Difficulty mix target: 1 Easy + 1 Medium per person per day (allow occasional Medium+Medium or 1 Hard as a stretch).
+
+## Daily Schedule (17 study days)
+
+| Day | Date         | Day of Week | Category (same for all)       | Person A (2 problems)                                                                     | Person B (2 problems)                                                                                             | Person C (2 problems)                                                                                     | Notes |
+| --- | ------------ | ----------- | ----------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ----- |
+| 1   | Feb 02, 2026 | Monday      | Arrays & Strings              | [ ] Two Sum (1, E)<br>[ ] Longest Common Prefix (14, E)                                   | [ ] Product of Array Except Self (238, M)<br>[ ] Best Time to Buy and Sell Stock (121, E)                         | [ ] Contains Duplicate (217, E)<br>[ ] Valid Anagram (242, E)                                             |       |
+| 2   | Feb 03, 2026 | Tuesday     | Two Pointers                  | [ ] Valid Palindrome (125, E)<br>[ ] Move Zeroes (283, E)                                 | [ ] Container With Most Water (11, M)<br>[ ] 3Sum (15, M)                                                         | [ ] Two Sum II (167, E)<br>[ ] Remove Duplicates from Sorted Array (26, E)                                |       |
+| 3   | Feb 04, 2026 | Wednesday   | Sliding Window                | [ ] Minimum Size Subarray Sum (209, M)<br>[ ] Permutation in String (567, M)              | [ ] Longest Substring Without Repeating Characters (3, M)<br>[ ] Longest Repeating Character Replacement (424, M) | [ ] Find All Anagrams in a String (438, M)<br>[ ] Max Consecutive Ones III (1004, M)                      |       |
+| 4   | Feb 05, 2026 | Thursday    | Prefix Sum & Difference Array | [ ] Range Sum Query - Immutable (303, E)<br>[ ] Corporate Flight Bookings (1109, M)       | [ ] Subarray Sum Equals K (560, M)<br>[ ] Continuous Subarray Sum (523, M)                                        | [ ] Find Pivot Index (724, E)<br>[ ] Range Sum Query 2D - Immutable (304, M)                              |       |
+| 5   | Feb 06, 2026 | Friday      | Hash Map & Set                | [ ] Ransom Note (383, E)<br>[ ] Group Anagrams (49, M)                                    | [ ] Longest Consecutive Sequence (128, M)<br>[ ] Top K Frequent Elements (347, M)                                 | [ ] Isomorphic Strings (205, E)<br>[ ] Valid Sudoku (36, M)                                               |       |
+| 6   | Feb 09, 2026 | Monday      | Stack & Queue                 | [ ] Valid Parentheses (20, E)<br>[ ] Next Greater Element I (496, E)                      | [ ] Daily Temperatures (739, M)<br>[ ] Evaluate Reverse Polish Notation (150, M)                                  | [ ] Min Stack (155, E)<br>[ ] Implement Queue using Stacks (232, E)                                       |       |
+| 7   | Feb 10, 2026 | Tuesday     | Linked List                   | [ ] Reverse Linked List (206, E)<br>[ ] Remove Nth Node From End of List (19, M)          | [ ] Reorder List (143, M)<br>[ ] Add Two Numbers (2, M)                                                           | [ ] Merge Two Sorted Lists (21, E)<br>[ ] Linked List Cycle (141, E)                                      |       |
+| 8   | Feb 11, 2026 | Wednesday   | Binary Search                 | [ ] Binary Search (704, E)<br>[ ] Find Minimum in Rotated Sorted Array (153, M)           | [ ] Search in Rotated Sorted Array (33, M)<br>[ ] Koko Eating Bananas (875, M)                                    | [ ] Search Insert Position (35, E)<br>[ ] Find First and Last Position of Element in Sorted Array (34, M) |       |
+| 9   | Feb 12, 2026 | Thursday    | Sorting & Order Statistics    | [ ] Sort Colors (75, M)<br>[ ] Sort an Array (912, M)                                     | [ ] Largest Number (179, M)<br>[ ] Kth Largest Element in an Array (215, M)                                       | [ ] Sort Characters By Frequency (451, M)<br>[ ] Top K Frequent Elements (347, M)                         |       |
+| 10  | Feb 13, 2026 | Friday      | Recursion & Backtracking      | [ ] Subsets (78, M)<br>[ ] Letter Combinations of a Phone Number (17, M)                  | [ ] Word Search (79, M)<br>[ ] Generate Parentheses (22, M)                                                       | [ ] Permutations (46, M)<br>[ ] Combination Sum (39, M)                                                   |       |
+| 11  | Feb 19, 2026 | Thursday    | Trees (Traversal, BST Basics) | [ ] Binary Tree Inorder Traversal (94, E)<br>[ ] Lowest Common Ancestor of a BST (235, E) | [ ] Validate Binary Search Tree (98, M)<br>[ ] Binary Tree Level Order Traversal (102, M)                         | [ ] Maximum Depth of Binary Tree (104, E)<br>[ ] Invert Binary Tree (226, E)                              |       |
+| 12  | Feb 20, 2026 | Friday      | Graph Traversal (BFS/DFS)     | [ ] Number of Islands (200, M)<br>[ ] Flood Fill (733, E)                                 | [ ] Course Schedule II (210, M)<br>[ ] Clone Graph (133, M)                                                       | [ ] Rotting Oranges (994, M)<br>[ ] Course Schedule (207, M)                                              |       |
+| 13  | Feb 23, 2026 | Monday      | Heap & Priority Queue         | [ ] Kth Largest Element in a Stream (703, E)<br>[ ] Task Scheduler (621, M)               | [ ] Find Median from Data Stream (295, H)<br>[ ] Merge k Sorted Lists (23, H)                                     | [ ] Last Stone Weight (1046, E)<br>[ ] K Closest Points to Origin (973, M)                                |       |
+| 14  | Feb 24, 2026 | Tuesday     | Greedy                        | [ ] Jump Game (55, M)<br>[ ] Assign Cookies (455, E)                                      | [ ] Candy (135, H)<br>[ ] Gas Station (134, M)                                                                    | [ ] Partition Labels (763, M)<br>[ ] Best Time to Buy and Sell Stock II (122, E)                          |       |
+| 15  | Feb 25, 2026 | Wednesday   | Intervals                     | [ ] Merge Intervals (56, M)<br>[ ] Meeting Rooms (252, E)                                 | [ ] Meeting Rooms II (253, M)<br>[ ] Minimum Number of Arrows to Burst Balloons (452, M)                          | [ ] Insert Interval (57, M)<br>[ ] Non-overlapping Intervals (435, M)                                     |       |
+| 16  | Feb 26, 2026 | Thursday    | Dynamic Programming (1D)      | [ ] Climbing Stairs (70, E)<br>[ ] House Robber (198, M)                                  | [ ] Coin Change (322, M)<br>[ ] Decode Ways (91, M)                                                               | [ ] Longest Increasing Subsequence (300, M)<br>[ ] Palindromic Substrings (647, M)                        |       |
+| 17  | Feb 27, 2026 | Friday      | Dynamic Programming (2D)      | [ ] Unique Paths (62, M)<br>[ ] Minimum Path Sum (64, M)                                  | [ ] Edit Distance (72, H)<br>[ ] Distinct Subsequences (115, H)                                                   | [ ] Longest Common Subsequence (1143, M)<br>[ ] Maximal Square (221, M)                                   |       |
+
+## Optional Tracking (copy/paste under each day)
+
+- Problems chosen (links):
+- Time spent:
+- Key patterns learned:
+- Mistakes / edge cases:
+- Follow-up to revisit:

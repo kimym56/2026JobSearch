@@ -10,10 +10,8 @@ Complete preparation system for landing a frontend engineering role, featuring s
 2026JobSearch/
 │
 ├── 📅 schedules/                    # All prep schedules
-│   ├── 50_Day_Adjusted_Schedule_v2.md       ⭐ CURRENT SCHEDULE (USE THIS)
-│   ├── 50_Day_Adjusted_Schedule.md          (Original version)
-│   ├── 50_Day_Frontend_Prep_FINAL_SCHEDULE.md
-│   ├── 50_Day_Weekend_Rest_Schedule.md
+│   ├── 50_Day_Adjusted_Schedule_v7.md       ⭐ CURRENT SCHEDULE (USE THIS)
+│   ├── deprecated/                           (Older schedule versions)
 │   ├── SCHEDULE_ADJUSTMENT_PLAN.md
 │   └── Schedule_Index.md
 │
@@ -65,7 +63,7 @@ Complete preparation system for landing a frontend engineering role, featuring s
 
 1. **Read the current schedule**:
    ```bash
-   open schedules/50_Day_Adjusted_Schedule_v2.md
+   open schedules/50_Day_Adjusted_Schedule_v7.md
    ```
 
 2. **Review the implementation challenges**:
@@ -76,7 +74,7 @@ Complete preparation system for landing a frontend engineering role, featuring s
    ```
 
 3. **Start Day 1**:
-   - Follow the schedule in `50_Day_Adjusted_Schedule_v2.md`
+   - Follow the schedule in `schedules/50_Day_Adjusted_Schedule_v7.md`
    - Track progress in `daily-logs/` (use Day_Template.md)
 
 4. **Start your first challenge (Day 3)**:
@@ -135,13 +133,12 @@ Complete preparation system for landing a frontend engineering role, featuring s
 
 ### 📅 Study Schedules
 
-**50-Day General Prep** (`schedules/50_Day_Adjusted_Schedule_v2.md`)
-- React mastery (Days 2-9)
-- Dual track: React + Algorithms (Days 10-20)
-- Algorithm intensive (Days 21-29)
-- Portfolio projects (Days 30-41)
-- Interview prep (Days 42-50)
-- Weekends OFF for rest
+**Current Plan (Compressed to Mar 05)** (`schedules/50_Day_Adjusted_Schedule_v7.md`)
+- Date range: Mon, Jan 26, 2026 -> Thu, Mar 05, 2026
+- 29 working days (weekends OFF)
+- Daytime: side project roadmap
+- Evenings: parallel rotation (React docs, coding assignments, interview questions, applications, algorithms, book)
+- Deprecated schedules live under `schedules/deprecated/`
 
 **FriendliAI 3-Week Targeted Prep** (`company-prep/FriendliAI_Prep_Schedule.md`)
 - TypeScript + Core challenges (Week 1)
@@ -152,33 +149,19 @@ Complete preparation system for landing a frontend engineering role, featuring s
 
 ---
 
-## 🎯 Learning Path
+## 🎯 Learning Path (v7)
 
-### Phase 1: Foundation (Days 1-9)
-- React fundamentals
-- 5 Basic challenges
-- HTML/CSS/JavaScript core concepts
+### Phase 1: React Docs + Core Challenges (Days 1-8)
+- React official docs first, then early challenges
+- Build from memory and write notes
 
-### Phase 2: Dual Track (Days 10-20)
-- 5 Intermediate challenges
-- Algorithm practice begins
-- TypeScript, APIs, real-time data
+### Phase 2: Challenges 5-10 + Algorithm Patterns (Days 9-18)
+- Timed reps on implementation challenges
+- Algorithms run in parallel with patterns by day
 
-### Phase 3: Algorithm Focus (Days 21-29)
-- Algorithm intensive
-- Review past challenges
-- Reach Silver 3 / Level 2-3
-
-### Phase 4: Advanced Projects (Days 30-41)
-- 5 Advanced challenges (split over multiple days)
-- Complex applications
-- Portfolio building
-
-### Phase 5: Interview Prep (Days 42-50)
-- Mock interviews using completed challenges
-- Applications (3-5 per day)
-- Behavioral prep
-- Final polish
+### Phase 3: Execution Mode (Days 19-27)
+- Advanced reps, mock interviews, applications
+- Focus on delivery and interview readiness
 
 ---
 
@@ -186,9 +169,10 @@ Complete preparation system for landing a frontend engineering role, featuring s
 
 ### Each Day:
 
-1. **Morning**: Follow schedule in `schedules/50_Day_Adjusted_Schedule_v2.md`
+1. **Morning/Daytime**: Follow the side-project roadmap in `schedules/50_Day_Adjusted_Schedule_v7.md`
+2. **Evening**: Follow the rotation table in `schedules/50_Day_Adjusted_Schedule_v7.md`
 
-2. **Challenge Day**:
+3. **Challenge Day**:
    ```bash
    cd frontend-interview-practice/[challenge-name]
    open README.md          # Read requirements (5 min)
@@ -196,12 +180,12 @@ Complete preparation system for landing a frontend engineering role, featuring s
    # Set timer and BUILD!
    ```
 
-3. **After Challenge**:
+4. **After Challenge**:
    - Test all features
    - Update `frontend-interview-practice/PRACTICE_TRACKER.md`
    - Note what was hard, what to improve
 
-4. **End of Day**:
+5. **End of Day**:
    - Copy `daily-logs/Day_Template.md` to `Day_[X].md`
    - Fill in what you learned, accomplished, questions
    - Plan tomorrow
@@ -358,7 +342,7 @@ When you apply to a specific company:
 
 ### Today (Day 0 - Setup):
 1. ✅ Read this README fully
-2. ✅ Open `schedules/50_Day_Adjusted_Schedule_v2.md`
+2. ✅ Open `schedules/50_Day_Adjusted_Schedule_v7.md`
 3. ✅ Explore `frontend-interview-practice/` directory
 4. ✅ Read all challenge READMEs to understand scope
 5. ✅ Set up progress tracker
@@ -441,10 +425,9 @@ You have:
 - ✅ Code reference patterns
 - ✅ Organized file structure
 
-**Start Date**: Friday, January 9, 2026
-**First Challenge**: Tuesday, January 13, 2026
-**All Challenges Complete**: Tuesday, March 4, 2026
-**Interview Ready**: Saturday, March 7, 2026
+**Current Schedule Start**: Monday, January 26, 2026
+**Current Schedule End**: Thursday, March 05, 2026
+**Working Days**: 27 (weekdays only)
 
 **You've got this! Let's build something amazing! 🚀**
 
@@ -452,7 +435,8 @@ You have:
 
 ## 📧 Quick Links
 
-- **Current Schedule**: `schedules/50_Day_Adjusted_Schedule_v2.md`
+- **Current Schedule**: `schedules/50_Day_Adjusted_Schedule_v7.md`
+- **Deprecated Schedules**: `schedules/deprecated/`
 - **Challenge Overview**: `frontend-interview-practice/README.md`
 - **Getting Started**: `frontend-interview-practice/GETTING_STARTED.md`
 - **FriendliAI Prep**: `company-prep/FriendliAI_Prep_Schedule.md`
@@ -462,5 +446,5 @@ You have:
 
 ---
 
-**Last Updated**: January 13, 2026
-**Version**: 2.0 (Organized Structure)
+**Last Updated**: January 27, 2026
+**Version**: 3.2 (v7 Schedule + Deprecated Folder)

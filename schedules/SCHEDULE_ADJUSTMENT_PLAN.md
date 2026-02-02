@@ -396,7 +396,7 @@
 ## 🎓 Next Steps
 
 1. **Review this plan** - does it align with your goals?
-2. **Update main schedule file** - apply these changes to 50_Day_Weekend_Rest_Schedule.md
+2. **Update main schedule file** - apply relevant changes to `50_Day_Adjusted_Schedule_v7.md` (older schedules are under `deprecated/`)
 3. **Update Day 2.md** - remove LeetCode, add React practice
 4. **Create tracking spreadsheet** - monitor progress weekly
 5. **Bookmark resources** - Frontend Mentor, Baekjoon, Programmers, LeetCode

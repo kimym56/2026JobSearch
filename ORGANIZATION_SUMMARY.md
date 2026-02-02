@@ -14,10 +14,8 @@
 │
 ├── 📅 schedules/                         All prep schedules
 │   ├── README.md                         Schedule guide
-│   ├── 50_Day_Adjusted_Schedule_v2.md   ⭐ CURRENT SCHEDULE
-│   ├── 50_Day_Adjusted_Schedule.md      (Original version)
-│   ├── 50_Day_Frontend_Prep_FINAL_SCHEDULE.md
-│   ├── 50_Day_Weekend_Rest_Schedule.md
+│   ├── 50_Day_Adjusted_Schedule_v7.md   ⭐ CURRENT SCHEDULE
+│   ├── deprecated/                      Older schedule versions
 │   ├── SCHEDULE_ADJUSTMENT_PLAN.md
 │   └── Schedule_Index.md
 │
@@ -69,10 +67,12 @@
 ### Before (Messy Root Directory):
 ```
 2026JobSearch/
-├── 50_Day_Adjusted_Schedule.md
-├── 50_Day_Adjusted_Schedule_v2.md
-├── 50_Day_Frontend_Prep_FINAL_SCHEDULE.md
-├── 50_Day_Weekend_Rest_Schedule.md
+├── schedules/deprecated/50_Day_Adjusted_Schedule.md
+├── schedules/deprecated/50_Day_Adjusted_Schedule_v2.md
+├── schedules/deprecated/50_Day_Adjusted_Schedule_v5.md
+├── schedules/deprecated/50_Day_Frontend_Prep_FINAL_SCHEDULE.md
+├── schedules/deprecated/50_Day_Weekend_Rest_Schedule.md
+├── schedules/50_Day_Adjusted_Schedule_v7.md
 ├── Day 1.md
 ├── Day 2.md
 ├── Day_3.md
@@ -146,7 +146,7 @@
 open README.md
 
 # 2. Choose your path
-open schedules/50_Day_Adjusted_Schedule_v2.md     # General 50-day prep
+open schedules/50_Day_Adjusted_Schedule_v7.md     # Current compressed plan
 # OR
 open company-prep/FriendliAI_Prep_Schedule.md     # FriendliAI specific
 
@@ -158,7 +158,7 @@ open GETTING_STARTED.md
 ### Daily Workflow?
 ```bash
 # 1. Check today's schedule
-open schedules/50_Day_Adjusted_Schedule_v2.md
+open schedules/50_Day_Adjusted_Schedule_v7.md
 
 # 2. Log your progress
 cp daily-logs/Day_Template.md "daily-logs/Day X.md"
@@ -255,7 +255,7 @@ open company-prep/README.md
 open README.md
 
 # Current schedule
-open schedules/50_Day_Adjusted_Schedule_v2.md
+open schedules/50_Day_Adjusted_Schedule_v7.md
 
 # Challenge overview
 open frontend-interview-practice/README.md
@@ -348,7 +348,7 @@ find . -name "README.md" -type f
 ### For You:
 1. ✅ Read `README.md` (main overview)
 2. ✅ Choose your path:
-   - General prep → `schedules/50_Day_Adjusted_Schedule_v2.md`
+   - General prep → `schedules/50_Day_Adjusted_Schedule_v7.md`
    - FriendliAI → `company-prep/FriendliAI_Prep_Schedule.md`
 3. ✅ Start tracking:
    - Use `daily-logs/Day_Template.md`

@@ -108,7 +108,7 @@ Deep dives into specific topics, technologies, or approaches.
 
 **Schedule Documentation**:
 - `../schedules/README.md` - All schedules explained
-- `../schedules/50_Day_Adjusted_Schedule_v2.md` - Current schedule
+- `../schedules/50_Day_Adjusted_Schedule_v7.md` - Current schedule
 
 **Daily Tracking**:
 - `../daily-logs/README.md` - How to log daily progress

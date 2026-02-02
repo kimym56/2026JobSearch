@@ -1,5 +1,7 @@
 # Schedule Update Summary
 
+Note: This document describes the older v2 schedule update. The current schedule is `schedules/50_Day_Adjusted_Schedule_v7.md`, and v2 now lives under `schedules/deprecated/`.
+
 ## ✅ What Was Updated
 
 I've created **50_Day_Adjusted_Schedule_v2.md** that integrates all 15 implementation challenges from `frontend-interview-practice/`.
@@ -151,10 +153,11 @@ Every weekend, review:
 ## 🚀 Quick Start Guide
 
 ### Day 1 (Friday, Jan 9)
-1. Review the new schedule: `50_Day_Adjusted_Schedule_v2.md`
-2. Explore challenges: `cd frontend-interview-practice/`
-3. Read all 15 READMEs to understand requirements
-4. Set up progress tracker
+1. Review the (historical) v2 schedule: `schedules/deprecated/50_Day_Adjusted_Schedule_v2.md`
+2. Review the current schedule: `schedules/50_Day_Adjusted_Schedule_v7.md`
+3. Explore challenges: `cd frontend-interview-practice/`
+4. Read all 15 READMEs to understand requirements
+5. Set up progress tracker
 
 ### Day 3 (Tuesday, Jan 13) - First Challenge!
 1. Read `01-todo-list/README.md`
@@ -176,8 +179,9 @@ Every weekend, review:
 ## 📁 File Locations
 
 ### Schedule Files
-- **New Schedule**: `50_Day_Adjusted_Schedule_v2.md` ← **USE THIS**
-- **Original Schedule**: `50_Day_Adjusted_Schedule.md` (reference)
+- **Current Schedule**: `schedules/50_Day_Adjusted_Schedule_v7.md` ← **USE THIS**
+- **v2 Schedule (Deprecated)**: `schedules/deprecated/50_Day_Adjusted_Schedule_v2.md`
+- **Original Schedule (Deprecated)**: `schedules/deprecated/50_Day_Adjusted_Schedule.md`
 - **This Summary**: `SCHEDULE_UPDATE_SUMMARY.md`
 
 ### Challenge Files
@@ -246,10 +250,11 @@ By the end of the 50 days:
 
 ## 📝 Next Steps
 
-1. ✅ **Read the new schedule**: `50_Day_Adjusted_Schedule_v2.md`
-2. ✅ **Explore challenges**: Browse `frontend-interview-practice/`
-3. ✅ **Read READMEs**: Understand all 15 challenges
-4. ✅ **Set up tracker**: Open `PRACTICE_TRACKER.md`
+1. ✅ **Read the current schedule**: `schedules/50_Day_Adjusted_Schedule_v7.md`
+2. ✅ (Optional) review v2: `schedules/deprecated/50_Day_Adjusted_Schedule_v2.md`
+3. ✅ **Explore challenges**: Browse `frontend-interview-practice/`
+4. ✅ **Read READMEs**: Understand all 15 challenges
+5. ✅ **Set up tracker**: Open `PRACTICE_TRACKER.md`
 5. ✅ **Day 1 (Jan 9)**: Start following the schedule!
 
 ---

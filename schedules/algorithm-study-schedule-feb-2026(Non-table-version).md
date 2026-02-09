@@ -1,7 +1,7 @@
 # Algorithm Study Schedule (LeetCode) — Feb 2026
 
 Start date: Monday, Feb 02, 2026
-End date: Friday, Feb 27, 2026
+End date: Thursday, Mar 05, 2026
 No study on weekends or Feb 16–18 (Korean holiday).
 
 ## Rules
@@ -16,45 +16,48 @@ No study on weekends or Feb 16–18 (Korean holiday).
 - Timebox per problem: 35 minutes (hard stop, then review/learn).
 - Daily review: 10–15 minutes to revisit 1 previous mistake/problem.
 - Weekly timed set: once per week, 2 problems in 60–75 minutes.
+- Friday review: review the week's problems solved by other people (no new problems assigned).
 - Difficulty mix target: 1 Easy + 1 Medium per person per day (allow occasional Medium+Medium or 1 Hard as a stretch).
 
-## Daily Schedule (17 study days)
+## Daily Schedule (17 problem days + Friday review days)
 
 ### Day 1 — Feb 02, 2026 (Monday) — Arrays & Strings
 
 Person A:
 
-- [ ] Two Sum (1, E)
-- [ ] Longest Common Prefix (14, E)
+- [x] Two Sum (1, E) **(Suboptimal)**
+- [x] Longest Common Prefix (14, E)
 
 Person B:
 
-- [ ] Product of Array Except Self (238, M)
-- [ ] Best Time to Buy and Sell Stock (121, E)
+- [x] Product of Array Except Self (238, M) **(Suboptimal)**
+- [x] Best Time to Buy and Sell Stock (121, E)
 
 Person C:
 
-- [ ] Contains Duplicate (217, E)
-- [ ] Valid Anagram (242, E)
+- [x] Contains Duplicate (217, E)
+- [x] Valid Anagram (242, E)
 
 Notes:
+
+- Similar Problem with 238 : Maximum Product Subarray (154, M)
 
 ### Day 2 — Feb 03, 2026 (Tuesday) — Two Pointers
 
 Person A:
 
-- [ ] Valid Palindrome (125, E)
-- [ ] Move Zeroes (283, E)
+- [x] Valid Palindrome (125, E)
+- [x] Move Zeroes (283, E) **(Suboptimal)**
 
 Person B:
 
-- [ ] Container With Most Water (11, M)
-- [ ] 3Sum (15, M)
+- [x] Container With Most Water (11, M)
+- [x] 3Sum (15, M) **(Suboptimal)**
 
 Person C:
 
-- [ ] Two Sum II (167, E)
-- [ ] Remove Duplicates from Sorted Array (26, E)
+- [x] Two Sum II (167, E) **(Suboptimal)**
+- [x] Remove Duplicates from Sorted Array (26, E) **(Suboptimal)**
 
 Notes:
 
@@ -62,8 +65,8 @@ Notes:
 
 Person A:
 
-- [ ] Minimum Size Subarray Sum (209, M)
-- [ ] Permutation in String (567, M)
+- [x] Minimum Size Subarray Sum (209, M) **(Suboptimal)**
+- [x] Permutation in String (567, M) **(Suboptimal)**
 
 Person B:
 
@@ -81,8 +84,8 @@ Notes:
 
 Person A:
 
-- [ ] Range Sum Query - Immutable (303, E)
-- [ ] Corporate Flight Bookings (1109, M)
+- [x] Range Sum Query - Immutable (303, E) **(Suboptimal)**
+- [x] Corporate Flight Bookings (1109, M)
 
 Person B:
 
@@ -96,7 +99,23 @@ Person C:
 
 Notes:
 
-### Day 5 — Feb 06, 2026 (Friday) — Hash Map & Set
+### Review Day — Feb 06, 2026 (Friday) — Weekly Review (Other People's Problems)
+
+Person A:
+
+- [ ] Review remain problems solved by Person B/C this week
+
+Person B:
+
+- [ ] Review remain problems solved by Person A/C this week
+
+Person C:
+
+- [ ] Review remain problems solved by Person A/B this week
+
+Notes:
+
+### Day 5 — Feb 09, 2026 (Monday) — Hash Map & Set
 
 Person A:
 
@@ -115,7 +134,7 @@ Person C:
 
 Notes:
 
-### Day 6 — Feb 09, 2026 (Monday) — Stack & Queue
+### Day 6 — Feb 10, 2026 (Tuesday) — Stack & Queue
 
 Person A:
 
@@ -134,7 +153,7 @@ Person C:
 
 Notes:
 
-### Day 7 — Feb 10, 2026 (Tuesday) — Linked List
+### Day 7 — Feb 11, 2026 (Wednesday) — Linked List
 
 Person A:
 
@@ -153,7 +172,7 @@ Person C:
 
 Notes:
 
-### Day 8 — Feb 11, 2026 (Wednesday) — Binary Search
+### Day 8 — Feb 12, 2026 (Thursday) — Binary Search
 
 Person A:
 
@@ -172,7 +191,23 @@ Person C:
 
 Notes:
 
-### Day 9 — Feb 12, 2026 (Thursday) — Sorting & Order Statistics
+### Review Day — Feb 13, 2026 (Friday) — Weekly Review (Other People's Problems)
+
+Person A:
+
+- [ ] Review remain problems solved by Person B/C this week
+
+Person B:
+
+- [ ] Review remain problems solved by Person A/C this week
+
+Person C:
+
+- [ ] Review remain problems solved by Person A/B this week
+
+Notes:
+
+### Day 9 — Feb 19, 2026 (Thursday) — Sorting & Order Statistics
 
 Person A:
 
@@ -191,7 +226,23 @@ Person C:
 
 Notes:
 
-### Day 10 — Feb 13, 2026 (Friday) — Recursion & Backtracking
+### Review Day — Feb 20, 2026 (Friday) — Weekly Review (Other People's Problems)
+
+Person A:
+
+- [ ] Review remain problems solved by Person B/C this week
+
+Person B:
+
+- [ ] Review remain problems solved by Person A/C this week
+
+Person C:
+
+- [ ] Review remain problems solved by Person A/B this week
+
+Notes:
+
+### Day 10 — Feb 23, 2026 (Monday) — Recursion & Backtracking
 
 Person A:
 
@@ -210,7 +261,7 @@ Person C:
 
 Notes:
 
-### Day 11 — Feb 19, 2026 (Thursday) — Trees (Traversal, BST Basics)
+### Day 11 — Feb 24, 2026 (Tuesday) — Trees (Traversal, BST Basics)
 
 Person A:
 
@@ -229,7 +280,7 @@ Person C:
 
 Notes:
 
-### Day 12 — Feb 20, 2026 (Friday) — Graph Traversal (BFS/DFS)
+### Day 12 — Feb 25, 2026 (Wednesday) — Graph Traversal (BFS/DFS)
 
 Person A:
 
@@ -248,7 +299,7 @@ Person C:
 
 Notes:
 
-### Day 13 — Feb 23, 2026 (Monday) — Heap & Priority Queue
+### Day 13 — Feb 26, 2026 (Thursday) — Heap & Priority Queue
 
 Person A:
 
@@ -267,7 +318,23 @@ Person C:
 
 Notes:
 
-### Day 14 — Feb 24, 2026 (Tuesday) — Greedy
+### Review Day — Feb 27, 2026 (Friday) — Weekly Review (Other People's Problems)
+
+Person A:
+
+- [ ] Review remain problems solved by Person B/C this week
+
+Person B:
+
+- [ ] Review remain problems solved by Person A/C this week
+
+Person C:
+
+- [ ] Review remain problems solved by Person A/B this week
+
+Notes:
+
+### Day 14 — Mar 02, 2026 (Monday) — Greedy
 
 Person A:
 
@@ -286,7 +353,7 @@ Person C:
 
 Notes:
 
-### Day 15 — Feb 25, 2026 (Wednesday) — Intervals
+### Day 15 — Mar 03, 2026 (Tuesday) — Intervals
 
 Person A:
 
@@ -305,7 +372,7 @@ Person C:
 
 Notes:
 
-### Day 16 — Feb 26, 2026 (Thursday) — Dynamic Programming (1D)
+### Day 16 — Mar 04, 2026 (Wednesday) — Dynamic Programming (1D)
 
 Person A:
 
@@ -324,7 +391,7 @@ Person C:
 
 Notes:
 
-### Day 17 — Feb 27, 2026 (Friday) — Dynamic Programming (2D)
+### Day 17 — Mar 05, 2026 (Thursday) — Dynamic Programming (2D)
 
 Person A:
 

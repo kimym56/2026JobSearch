@@ -14,96 +14,43 @@ This document provides a comprehensive overview of the Mocheong backend architec
 
 Mocheong uses a **microservices architecture** with two main backend services:
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           Frontend Layer                                 │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│                     Next.js UI (Port 3001)                               │
-│                     - React Components                                   │
-│                     - Socket.IO Client                                   │
-│                     - Axios/Fetch for REST                               │
-│                                                                          │
-└────────────────────────────┬────────────────────────────────────────────┘
-                             │
-                             │ HTTP (REST API)
-                             │ WebSocket (Socket.IO)
-                             │
-┌────────────────────────────▼────────────────────────────────────────────┐
-│                         API Gateway Layer                                │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│                     NestJS Backend (Port 3002)                           │
-│                     ┌────────────────────────────────┐                   │
-│                     │  REST API Controllers          │                   │
-│                     │  - Auth (JWT)                  │                   │
-│                     │  - Pages                       │                   │
-│                     │  - Files (S3)                  │                   │
-│                     │  - Payments (Portone)          │                   │
-│                     │  - Invitations                 │                   │
-│                     │  - Admin                       │                   │
-│                     └────────────────────────────────┘                   │
-│                     ┌────────────────────────────────┐                   │
-│                     │  Socket.IO Gateway             │                   │
-│                     │  - Chat rooms                  │                   │
-│                     │  - Session management          │                   │
-│                     │  - Message routing             │                   │
-│                     └────────────────────────────────┘                   │
-│                     ┌────────────────────────────────┐                   │
-│                     │  Services                      │                   │
-│                     │  - Agent Service (HTTP client) │                   │
-│                     │  - Redis Service (Pub/Sub)     │                   │
-│                     │  - Session Service             │                   │
-│                     └────────────────────────────────┘                   │
-│                                                                          │
-└────────────────────────────┬────────────────────────────────────────────┘
-                             │
-                             │ HTTP (Agent API)
-                             │
-┌────────────────────────────▼────────────────────────────────────────────┐
-│                      AI Processing Layer                                 │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│                   FastAPI Agent Manager (Port 8000)                      │
-│                   ┌──────────────────────────────┐                       │
-│                   │  HTTP Endpoints              │                       │
-│                   │  - POST /chat (async)        │                       │
-│                   │  - GET /health               │                       │
-│                   └──────────────────────────────┘                       │
-│                   ┌──────────────────────────────┐                       │
-│                   │  LangChain Agents             │                       │
-│                   │  - Main Agent                 │                       │
-│                   │  - Context Agent              │                       │
-│                   │  - Map Agent                  │                       │
-│                   │  - Output Agent               │                       │
-│                   └──────────────────────────────┘                       │
-│                   ┌──────────────────────────────┐                       │
-│                   │  Celery Tasks                 │                       │
-│                   │  - Async processing           │                       │
-│                   │  - Long-running tasks         │                       │
-│                   └──────────────────────────────┘                       │
-│                                                                          │
-└────────────────────────────┬────────────────────────────────────────────┘
-                             │
-                             │ Redis Pub/Sub (Streaming responses)
-                             │ Celery Broker (Task queue)
-                             │
-┌────────────────────────────▼────────────────────────────────────────────┐
-│                      Infrastructure Layer                                │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────────┐      │
-│  │  PostgreSQL  │  │    Redis     │  │       AWS S3             │      │
-│  │  (Port 5432) │  │  (Port 6379) │  │   (File Storage)        │      │
-│  │              │  │              │  │                          │      │
-│  │  - Users     │  │  - Pub/Sub   │  │  - Uploaded images       │      │
-│  │  - Pages     │  │  - Celery    │  │  - PDF files             │      │
-│  │  - Chats     │  │    broker    │  │                          │      │
-│  │  - Payments  │  │  - Cache     │  │                          │      │
-│  │  - Files     │  │              │  │                          │      │
-│  └──────────────┘  └──────────────┘  └──────────────────────────┘      │
-│                                                                          │
-└─────────────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TB
+    subgraph FrontendLayer["Frontend Layer"]
+        UI["Next.js UI (Port 3001) / - React Components / - Socket.IO Client / - Axios/Fetch for REST"]
+    end
+
+    subgraph ApiLayer["API Gateway Layer"]
+        Nest["NestJS Backend (Port 3002)"]
+        Rest["REST API Controllers / - Auth (JWT) / - Pages / - Files (S3) / - Payments (Portone) / - Invitations / - Admin"]
+        Gateway["Socket.IO Gateway / - Chat rooms / - Session management / - Message routing"]
+        Services["Services / - Agent Service (HTTP client) / - Redis Service (Pub/Sub) / - Session Service"]
+        Nest --> Rest
+        Nest --> Gateway
+        Nest --> Services
+    end
+
+    subgraph AiLayer["AI Processing Layer"]
+        AgentManager["FastAPI Agent Manager (Port 8000)"]
+        Endpoints["HTTP Endpoints / - POST /chat (async) / - GET /health"]
+        Agents["LangChain Agents / - Main Agent / - Context Agent / - Map Agent / - Output Agent"]
+        Tasks["Celery Tasks / - Async processing / - Long-running tasks"]
+        AgentManager --> Endpoints
+        AgentManager --> Agents
+        AgentManager --> Tasks
+    end
+
+    subgraph InfraLayer["Infrastructure Layer"]
+        Postgres["PostgreSQL (Port 5432) / - Users / - Pages / - Chats / - Payments / - Files"]
+        Redis["Redis (Port 6379) / - Pub/Sub / - Celery broker / - Cache"]
+        S3["AWS S3 (File Storage) / - Uploaded images / - PDF files"]
+    end
+
+    UI -- "HTTP (REST API) / WebSocket (Socket.IO)" --> Nest
+    Nest -- "HTTP (Agent API)" --> AgentManager
+    AgentManager -- "Redis Pub/Sub (Streaming responses) / Celery Broker (Task queue)" --> Redis
+    Nest --> Postgres
+    Nest --> S3
 ```
 
 ## Services Overview
@@ -177,14 +124,12 @@ Mocheong uses a **microservices architecture** with two main backend services:
 ### Frontend → NestJS Backend
 
 #### REST API Communication
-```
-Frontend                    NestJS Backend
-   │                              │
-   │───── HTTP GET ──────────────>│
-   │     /api/page/:id            │
-   │                              │
-   │<──── JSON Response ──────────│
-   │     { page: {...} }          │
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJSBackend as NestJS Backend
+    Frontend->>NestJSBackend: HTTP GET /api/page/:id
+    NestJSBackend-->>Frontend: JSON response (page payload)
 ```
 
 **Example**:
@@ -196,26 +141,17 @@ const response = await axios.get('http://localhost:3002/api/page/123', {
 ```
 
 #### WebSocket Communication (Socket.IO)
-```
-Frontend                    NestJS ChatGateway
-   │                              │
-   │───── connect ───────────────>│
-   │<───── connection ────────────│
-   │                              │
-   │───── joinRoom ──────────────>│
-   │     { room: "page-123" }     │
-   │                              │
-   │<───── session-info ──────────│
-   │     { session_id: "..." }    │
-   │                              │
-   │───── chat-message ──────────>│
-   │     { text: "Hello" }        │
-   │                              │
-   │<───── message-accepted ──────│
-   │     { message_id: "..." }    │
-   │                              │
-   │<───── newMessage ────────────│
-   │     (from AI agent)          │
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant ChatGateway as NestJS ChatGateway
+    Frontend->>ChatGateway: connect
+    ChatGateway-->>Frontend: connection
+    Frontend->>ChatGateway: joinRoom (room=page-123)
+    ChatGateway-->>Frontend: session-info (session_id)
+    Frontend->>ChatGateway: chat-message (text=Hello)
+    ChatGateway-->>Frontend: message-accepted (message_id)
+    ChatGateway-->>Frontend: newMessage (from AI agent)
 ```
 
 **Example**:
@@ -237,21 +173,12 @@ socket.on('newMessage', (message) => {
 ### NestJS Backend → Agent Manager
 
 #### HTTP Communication
-```
-NestJS ChatGateway      FastAPI Agent Manager
-   │                              │
-   │───── POST /chat ────────────>│
-   │     {                       │
-   │       message: "Hello",      │
-   │       session_id: "...",     │
-   │       wedding_context: {...} │
-   │     }                        │
-   │                              │
-   │<───── 202 Accepted ──────────│
-   │     {                       │
-   │       status: "accepted",    │
-   │       message_id: "..."       │
-   │     }                        │
+```mermaid
+sequenceDiagram
+    participant ChatGateway as NestJS ChatGateway
+    participant AgentManager as FastAPI Agent Manager
+    ChatGateway->>AgentManager: POST /chat (message, session_id, wedding_context)
+    AgentManager-->>ChatGateway: 202 Accepted (status: accepted, message_id)
 ```
 
 **Key Point**: The Agent Manager returns **immediately** with "accepted" status. Processing happens asynchronously via Celery.
@@ -259,40 +186,30 @@ NestJS ChatGateway      FastAPI Agent Manager
 ### Agent Manager → Celery Worker
 
 #### Task Queue Communication
-```
-FastAPI Agent Manager      Celery Worker              LangChain Agent
-   │                              │                          │
-   │───── queue task ────────────>│                          │
-   │   (process_chat_message)     │                          │
-   │                              │                          │
-   │                              │───── execute task ───────>│
-   │                              │                          │
-   │                              │                          │ [Process]
-   │                              │                          │ [Fetch data]
-   │                              │                          │ [Generate response]
-   │                              │<───── result ─────────────│
-   │                              │                          │
+```mermaid
+sequenceDiagram
+    participant AgentManager as FastAPI Agent Manager
+    participant Celery as Celery Worker
+    participant LangChain as LangChain Agent
+    AgentManager->>Celery: Queue task (process_chat_message)
+    Celery->>LangChain: Execute task
+    Note over LangChain: Process request, fetch data, and generate response.
+    LangChain-->>Celery: Task result
 ```
 
 ### Celery Worker → NestJS Backend (via Redis)
 
 #### Redis Pub/Sub Communication
-```
-Celery Worker              Redis                  NestJS Backend
-   │                          │                          │
-   │───── publish ───────────>│                          │
-   │   channel: chat:{id}     │                          │
-   │   data: {                │                          │
-   │     type: "text",        │                          │
-   │     content: "...",      │                          │
-   │     component: {...}     │                          │
-   │   }                      │                          │
-   │                          │───── forward ─────────────>│
-   │                          │                          │
-   │                          │                          │ [Subscribed]
-   │                          │                          │
-   │                          │                          │───── emit ────> Frontend
-   │                          │                          │   (Socket.IO)
+```mermaid
+sequenceDiagram
+    participant Celery as Celery Worker
+    participant Redis
+    participant NestJS as NestJS Backend
+    participant Frontend
+    Celery->>Redis: publish chat channel payload
+    Redis-->>NestJS: forward published message
+    Note over NestJS: subscribed to channel
+    NestJS-->>Frontend: emit via Socket.IO
 ```
 
 ## Technology Stack
@@ -324,55 +241,50 @@ Celery Worker              Redis                  NestJS Backend
 ## Data Flow Patterns
 
 ### 1. User Registration Flow
-```
-Frontend → NestJS Backend → PostgreSQL
-  │            │                │
-  │───── POST /api/auth/register
-  │            │                │
-  │            │───── create User
-  │            │                │
-  │            │<──── user saved
-  │            │                │
-  │<──── JWT token
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS Backend
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/auth/register
+    NestJS->>Postgres: create user
+    Postgres-->>NestJS: user saved
+    NestJS-->>Frontend: JWT token
 ```
 
 ### 2. Chat Message Flow (Complete)
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant AM as AM
+    participant CW as CW
+    participant LC as LC
+    participant RD as RD
+    FE->>NB: chat-message
+    NB->>AM: POST /chat
+    AM->>CW: queue task
+    CW->>LC: process request
+    LC-->>CW: generated response
+    CW->>RD: publish response
+    NB->>RD: subscribe channel
+    RD-->>NB: streamed message
+    NB-->>FE: emit via Socket.IO
 ```
-Frontend → NestJS Backend → Agent Manager → Celery → LangChain
-   │              │                │              │          │
-   │chat-message  │                │              │          │
-   │              │POST /chat      │              │          │
-   │              │                │queue task    │          │
-   │              │                │              │process   │
-   │              │                │              │          │generate
-   │              │                │              │          │response
-   │              │                │              │          │
-   │              │                │              │<─────────│
-   │              │                │              │
-   │              │                │publish to Redis
-   │              │                │              │
-   │              │subscribe       │              │
-   │              │<───────────────│              │
-   │              │                │
-   │emit via Socket.IO
-   │<─────────────│
-```
+Abbreviations: `FE` = Frontend, `NB` = NestJS Backend, `AM` = Agent Manager, `CW` = Celery Worker, `LC` = LangChain, `RD` = Redis.
 
 ### 3. File Upload Flow
-```
-Frontend → NestJS Backend → AWS S3
-   │            │              │
-   │POST /file/upload
-   │multipart/form-data
-   │            │              │
-   │            │upload to S3  │
-   │            │              │
-   │            │<──── URL     │
-   │            │              │
-   │            │save metadata │
-   │            │to PostgreSQL │
-   │            │              │
-   │<──── file data
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS Backend
+    participant S3 as AWS S3
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /file/upload (multipart/form-data)
+    NestJS->>S3: upload file
+    S3-->>NestJS: file URL
+    NestJS->>Postgres: save file metadata
+    NestJS-->>Frontend: file data response
 ```
 
 ## Key Architectural Decisions

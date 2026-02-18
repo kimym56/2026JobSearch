@@ -40,68 +40,27 @@ This guide provides a comprehensive overview of the NestJS backend, focusing on 
 
 ## Directory Structure
 
-```
-backend/src/
-├── main.ts                    # Application entry point
-├── app.module.ts              # Root module
-│
-├── auth/                      # Authentication module
-│   ├── auth.controller.ts     # Login/register endpoints
-│   ├── auth.service.ts        # Auth logic
-│   ├── jwt.strategy.ts        # JWT verification
-│   ├── local.strategy.ts      # Local login strategy
-│   └── dto/
-│       ├── login.dto.ts       # Login request schema
-│       └── register.dto.ts    # Register request schema
-│
-├── chat/                      # Chat & WebSocket module
-│   ├── chat.gateway.ts        # Socket.IO gateway
-│   ├── chat.service.ts        # Chat logic
-│   ├── agent.service.ts       # Agent Manager client
-│   ├── redis.service.ts       # Redis pub/sub client
-│   └── session.service.ts     # Session management
-│
-├── page/                      # Page/CMS module
-│   ├── page.controller.ts     # Page CRUD endpoints
-│   ├── page.service.ts        # Page logic
-│   └── markdown-converter.service.ts
-│
-├── file/                      # File upload module
-│   ├── file.controller.ts     # Upload endpoints
-│   ├── file.service.ts        # File logic
-│   └── s3.service.ts          # AWS S3 integration
-│
-├── payment/                   # Payment module
-│   ├── payment.controller.ts  # Payment endpoints
-│   └── payment.service.ts
-│
-├── invitation/                # Invitation module
-│   ├── invitation.controller.ts
-│   └── invitation.service.ts
-│
-├── admin/                     # Admin module
-│   ├── admin.controller.ts
-│   └── admin.service.ts
-│
-├── entities/                  # Database models (TypeORM)
-│   ├── user.entity.ts
-│   ├── chat.entity.ts
-│   ├── page.entity.ts
-│   ├── payment.entity.ts
-│   ├── invitation.entity.ts
-│   ├── file.entity.ts
-│   └── page-view.entity.ts
-│
-├── database/                  # Repository layer
-│   ├── base-repository.ts
-│   ├── user.repository.ts
-│   └── ...
-│
-├── logger/                    # Winston logger
-│   └── winston-logger.service.ts
-│
-└── common/                    # Shared utilities
-    └── http-exception.filter.ts
+```mermaid
+flowchart TD
+    SRC["backend/src"]
+    SRC --> CORE["Core / - main.ts / - app.module.ts"]
+
+    SRC --> FEATURES["Feature modules"]
+    FEATURES --> AUTH["auth/ / controller, service, / jwt.strategy, local.strategy, / dto(login/register)"]
+    FEATURES --> CHAT["chat/ / gateway, service, / agent, redis, session"]
+    FEATURES --> PAGE["page/ / controller, service, / markdown-converter"]
+    FEATURES --> FILE["file/ / controller, service, s3"]
+    FEATURES --> PAYMENT["payment/ / controller, service"]
+    FEATURES --> INVITATION["invitation/ / controller, service"]
+    FEATURES --> ADMIN["admin/ / controller, service"]
+
+    SRC --> DATALAYER["Data layer"]
+    DATALAYER --> ENTITIES["entities/ / user, chat, page, payment, / invitation, file, page-view"]
+    DATALAYER --> REPOS["database/ / base-repository, user.repository, ..."]
+
+    SRC --> PLATFORM["Platform/Common"]
+    PLATFORM --> LOGGER["logger/ / winston-logger.service.ts"]
+    PLATFORM --> COMMON["common/ / http-exception.filter.ts"]
 ```
 
 ## REST API Endpoints
@@ -304,21 +263,16 @@ Content-Type: application/json
 
 ### How JWT Works
 
-```
-┌─────────┐                   ┌──────────────┐                 ┌──────────┐
-│         │                   │              │                 │          │
-│ Frontend│─── POST login ────>│ NestJS API   │─── verify ────>│ Database │
-│         │                   │              │    password     │          │
-│         │<── JWT token ──────│              │<────────────────│          │
-│         │                   │              │                 │          │
-└─────────┘                   └──────────────┘                 └──────────┘
-      │
-      │ Store token
-      │ (localStorage/cookie)
-      │
-      │ Use in subsequent requests
-      │ Authorization: Bearer {token}
-      │
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS API
+    participant Database
+    Frontend->>NestJS: POST /api/auth/login
+    NestJS->>Database: Verify password hash
+    Database-->>NestJS: User record
+    NestJS-->>Frontend: JWT token
+    Note over Frontend: Store token in localStorage or cookie; send Authorization Bearer token on later requests.
 ```
 
 ### Using JWT in Frontend

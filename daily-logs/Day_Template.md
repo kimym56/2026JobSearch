@@ -113,22 +113,22 @@ _Focus: Project coordination before frontend prep_
 ```markdown
 ## 🌤️ Afternoon Block: Frontend Prep - Core Learning
 **Time:** 1:00 PM – 4:00 PM
-_Focus: Integrated learning (Concept → Apply → Explain)_
+_Focus: Integrated learning (Concept → Optional Apply → Flex Review)_
 
 - **1:00 – 2:00:** Learn Concept
   - [ ] [React docs section / design pattern / interview topic]
-  - Take structured notes on key points
+  - Optional: jot short notes only if helpful
   - _Resource: [Specific link or reference]_
 
-- **2:00 – 3:00:** Apply via Coding
-  - [ ] [Timed coding challenge / mini-implementation]
-  - Focus: Apply concept from hour 1
-  - Time-box: 45 min solve + 15 min review
+- **2:00 – 3:00:** Coding Application (Optional)
+  - [ ] Option A: [Timed coding challenge / mini-implementation]
+  - [ ] Option B: [Read/refactor existing code]
+  - Focus: convert concept from hour 1 into practical decision criteria
 
-- **3:00 – 4:00:** Explain Aloud
-  - [ ] Record 5-minute explanation of solution
-  - [ ] Identify gaps in understanding
-  - [ ] Note follow-up topics for deep dive
+- **3:00 – 4:00:** Flex Review (No Writing Required)
+  - [ ] Option A: Quick concept recap + one extra mini example
+  - [ ] Option B: Interview-question warm-up
+  - [ ] Option C: Short recovery buffer before next block
 
 ### 🚶 Break (4:00 – 4:30 PM)
 ```
@@ -236,7 +236,7 @@ Questions to revisit:
 - Total: ~9.5 hours focused work (3h side project + 6h frontend prep)
 - Include: Morning algorithm (if scheduled) + Core learning (3h) + Side project (2.5h) + Deep dive (2h) + Practice (1.5h) + Review (0.5h)
 - Must include: 3 breaks (30min each), lunch (1hr), dinner (1hr)
-- Frontend prep structure: Learn → Apply → Explain → Deep dive → Practice → Review
+- Frontend prep structure: Learn → Optional Apply → Flex Review → Deep dive → Practice → Review
 
 ### Schedule A: Full Study Days (Jan 22 onwards, weekdays only) - DEPRECATED, see Schedule C
 - Start: 9:00 AM
@@ -353,7 +353,7 @@ _Focus: Hands-on coding with hooks_
 ## 🌆 Evening Block: Algorithms & Review
 
 **Time:** 8:00 PM – 2:00 AM
-_Focus: LeetCode practice and consolidation_
+_Focus: LeetCode practice and review_
 
 - **8:00 – 9:00:** 🍽️ Dinner
 

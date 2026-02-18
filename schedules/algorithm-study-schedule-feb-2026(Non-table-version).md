@@ -70,13 +70,13 @@ Person A:
 
 Person B:
 
-- [ ] Longest Substring Without Repeating Characters (3, M)
+- [x] Longest Substring Without Repeating Characters (3, M) **(Suboptimal)**
 - [ ] Longest Repeating Character Replacement (424, M)
 
 Person C:
 
-- [ ] Find All Anagrams in a String (438, M)
-- [ ] Max Consecutive Ones III (1004, M)
+- [x] Find All Anagrams in a String (438, M) **(Suboptimal)**
+- [x] Max Consecutive Ones III (1004, M) **(Suboptimal)**
 
 Notes:
 
@@ -89,13 +89,13 @@ Person A:
 
 Person B:
 
-- [ ] Subarray Sum Equals K (560, M)
-- [ ] Continuous Subarray Sum (523, M)
+- [x] Subarray Sum Equals K (560, M)
+- [x] Continuous Subarray Sum (523, M) **(Suboptimal)**
 
 Person C:
 
-- [ ] Find Pivot Index (724, E)
-- [ ] Range Sum Query 2D - Immutable (304, M)
+- [x] Find Pivot Index (724, E)
+- [x] Range Sum Query 2D - Immutable (304, M) **(Suboptimal)**
 
 Notes:
 
@@ -119,8 +119,8 @@ Notes:
 
 Person A:
 
-- [ ] Ransom Note (383, E)
-- [ ] Group Anagrams (49, M)
+- [x] Ransom Note (383, E)
+- [x] Group Anagrams (49, M) **(Suboptimal)**
 
 Person B:
 
@@ -138,27 +138,27 @@ Notes:
 
 Person A:
 
-- [ ] Valid Parentheses (20, E)
-- [ ] Next Greater Element I (496, E)
+- [x] Valid Parentheses (20, E)
+- [x] Next Greater Element I (496, E) **(Suboptimal)**
 
 Person B:
 
-- [ ] Daily Temperatures (739, M)
-- [ ] Evaluate Reverse Polish Notation (150, M)
+- [x] Daily Temperatures (739, M) **(Suboptimal)**
+- [x] Evaluate Reverse Polish Notation (150, M)
 
 Person C:
 
-- [ ] Min Stack (155, E)
-- [ ] Implement Queue using Stacks (232, E)
+- [x] Min Stack (155, E) **(Suboptimal)**
+- [x] Implement Queue using Stacks (232, E)
 
-Notes:
+Notes: Additional Problem for B : 173.Binary Search Tree Iterator
 
 ### Day 7 — Feb 11, 2026 (Wednesday) — Linked List
 
 Person A:
 
-- [ ] Reverse Linked List (206, E)
-- [ ] Remove Nth Node From End of List (19, M)
+- [x] Reverse Linked List (206, E)
+- [x] Remove Nth Node From End of List (19, M)
 
 Person B:
 
@@ -176,8 +176,8 @@ Notes:
 
 Person A:
 
-- [ ] Binary Search (704, E)
-- [ ] Find Minimum in Rotated Sorted Array (153, M)
+- [x] Binary Search (704, E) **(Suboptimal)**
+- [x] Find Minimum in Rotated Sorted Array (153, M) **(Suboptimal)**
 
 Person B:
 

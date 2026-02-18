@@ -12,28 +12,17 @@
 
 ## 사용자 등록 플로우
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │
-│  프론트엔드  │      │  NestJS API  │      │  PostgreSQL  │
-│             │      │              │      │              │
-│ 1. 사용자   │      │ 3. 이메일    │      │ 5. User      │
-│    폼 작성  │      │    형식 검증 │      │    레코드    │
-│             │      │ 4. 비밀번호  │      │    생성      │
-│ 2. POST     │      │    해싱    │      │              │
-│    /register│      │              │      │ 6. User      │
-│             │      │              │      │    반환      │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │
-       │ POST /api/auth/register                 │
-       │ { email, password, name }               │
-       │                    │                     │
-       │                    │ INSERT INTO users  │
-       │                    │ (email, hashed_pwd)│
-       │                    │                     │
-       │<───────────────────┴─────────────────────│
-       │ 201 Created
-       │ { id, email, name, createdAt }
+```mermaid
+sequenceDiagram
+    participant Frontend as 프론트엔드
+    participant NestJS as NestJS API
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/auth/register (email, password, name)
+    NestJS->>NestJS: 이메일/비밀번호 검증
+    NestJS->>NestJS: 비밀번호 해싱 (bcrypt)
+    NestJS->>Postgres: INSERT INTO users
+    Postgres-->>NestJS: 생성된 사용자
+    NestJS-->>Frontend: 201 Created (user payload)
 ```
 
 ### 단계별 설명
@@ -48,38 +37,21 @@
 
 ## 로그인 및 인증 플로우
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │      │              │
-│  프론트엔드  │      │  NestJS API  │      │  PostgreSQL  │      │    JWT       │
-│             │      │              │      │              │      │  Service     │
-│ 1. 사용자   │      │ 3. DTO       │      │ 5. 비밀번호  │      │              │
-│    자격입력 │      │    검증     │      │    비교      │      │ 7. 토큰     │
-│             │      │ 4. 이메일로 │      │              │      │    서명     │
-│ 2. POST     │      │    사용자   │      │ 6. user      │      │              │
-│    /login   │      │    찾기     │      │    반환      │      │ 8. 서명된   │
-│             │      │              │      │              │      │    토큰     │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │                     │
-       │ POST /api/auth/login                     │                     │
-       │ { email, password }                      │                     │
-       │                    │                     │                     │
-       │                    │ SELECT * FROM users │                     │
-       │                    │ WHERE email = ?     │                     │
-       │                    │                     │                     │
-       │                    │<────────────────────│                     │
-       │                    │ user record (with password)             │
-       │                    │                     │                     │
-       │                    │ bcrypt.compare(plain, hashed)             │
-       │                    │                     │                     │
-       │                    │                     │  jwt.sign({email, sub: id})
-       │                    │                     │                     │
-       │<───────────────────┴─────────────────────┴─────────────────────│
-       │ 200 OK
-       │ { access_token, user }
-       │
-       │ 토큰을 localStorage에 저장
-       │ 후속 요청에 사용
+```mermaid
+sequenceDiagram
+    participant Frontend as 프론트엔드
+    participant NestJS as NestJS API
+    participant Postgres as PostgreSQL
+    participant JWT as JWT Service
+    Frontend->>NestJS: POST /api/auth/login (email, password)
+    NestJS->>NestJS: DTO 검증
+    NestJS->>Postgres: 이메일로 사용자 조회
+    Postgres-->>NestJS: 사용자 레코드 (해시 비밀번호 포함)
+    NestJS->>NestJS: bcrypt.compare(plain, hashed)
+    NestJS->>JWT: jwt.sign(payload)
+    JWT-->>NestJS: 서명된 토큰
+    NestJS-->>Frontend: 200 OK (token + user)
+    Note over Frontend: 토큰을 localStorage에 저장하고 후속 요청의 Authorization Bearer 토큰으로 사용.
 ```
 
 ### 단계별 설명
@@ -99,54 +71,28 @@
 
 가장 복잡한 플로우로, Socket.IO, HTTP, Redis, Celery, LangChain 에이전트가 포함됩니다.
 
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant FA as FA
+    participant CW as CW
+    participant LC as LC
+    participant RD as RD
+    FE->>NB: chat-message
+    NB->>NB: 웨딩 컨텍스트 조회
+    NB->>FA: POST /chat
+    FA->>CW: Celery 작업 큐잉
+    FA-->>NB: 202 Accepted
+    NB-->>FE: message-accepted
+    NB->>RD: chat 채널 구독
+    CW->>LC: AI 에이전트 처리
+    LC-->>CW: 생성된 응답
+    CW->>RD: 응답 스트리밍 게시
+    RD-->>NB: 구독 메시지 전달
+    NB-->>FE: newMessage
 ```
-┌─────────┐   ┌──────────┐   ┌─────────────┐   ┌──────────┐   ┌─────────┐   ┌──────────┐
-│프론트엔드│   │ NestJS   │   │ FastAPI     │   │ Celery   │   │LangChain│   │ Redis    │
-│         │   │ Backend  │   │ Agent Mgr   │   │ Worker   │   │ Agents  │   │ Pub/Sub │
-└─────────┘   └──────────┘   └─────────────┘   └──────────┘   └─────────┘   └──────────┘
-
-   │               │               │                │            │            │
-   │chat-message   │               │                │            │            │
-   ├──────────────>│               │                │            │            │
-   │               │               │                │            │            │
-   │               │PostgreSQL에서 │                │            │            │
-   │               │웨딩 컨텍스트 │                │            │            │
-   │               │가져오기      │                │            │            │
-   │               ├──────────────────────────────────────────────────────────>│
-   │<──────────────┤               │                │            │            │
-   │               │               │                │            │            │
-   │               │POST /chat     │                │            │            │
-   │               ├──────────────>│                │            │            │
-   │               │               │                │            │            │
-   │               │               │Celery 작업    │            │            │
-   │               │               │큐잉           │            │            │
-   │               │               ├───────────────>│            │            │
-   │               │               │                │            │            │
-   │               │202 Accepted   │                │            │            │
-   │<──────────────┴───────────────│                │            │            │
-   │               │               │                │            │            │
-   │accepted       │               │                │            │            │
-   │<──────────────│               │                │            │            │
-   │               │               │                │            │            │
-   │               │Redis 채널    │                │            │            │
-   │               │구독          │                │            │            │
-   │               ├──────────────────────────────────────────────────────────>│
-   │               │               │                │            │            │
-   │               │               │                │AI로       │            │
-   │               │               │                │처리       │            │
-   │               │               │                ├───────────>│            │
-   │               │               │                │            │            │
-   │               │               │                │응답       │            │
-   │               │               │                │스트리밍   │            │
-   │               │               │                ├────────────────────────>│
-   │               │               │                │            │            │
-   │               │<─────────────────────────────────────────────────────────│
-   │               │               │                │            │            │
-   │               │Socket.IO로   │                │            │            │
-   │               │emit          │                │            │            │
-   │<──────────────│               │                │            │            │
-   │newMessage     │               │                │            │            │
-```
+약어: `FE` = 프론트엔드, `NB` = NestJS 백엔드, `FA` = FastAPI Agent Manager, `CW` = Celery Worker, `LC` = LangChain, `RD` = Redis.
 
 ### 상세 단계
 
@@ -171,68 +117,34 @@
 
 ## 파일 업로드 플로우
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │      │              │
-│  프론트엔드  │      │  NestJS API  │      │    AWS S3    │      │  PostgreSQL  │
-│             │      │              │      │              │      │              │
-│ 1. 사용자   │      │ 3. 파일      │      │ 6. 파일      │      │ 8. 메타데이타│
-│    파일     │      │    수신     │      │    업로드    │      │    저장      │
-│    선택     │      │ 4. 검증     │      │              │      │              │
-│             │      │    (type,    │      │ 7. URL      │      │              │
-│ 2. POST     │      │    size)     │      │    반환      │      │              │
-│    /upload  │      │ 5. 고유     │      │              │      │              │
-│             │      │    파일이름  │      │              │      │              │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │                     │
-       │ multipart/form-data                     │                     │
-       │ file: [binary]                          │                     │
-       │                    │ PUT /{filename}    │                     │
-       │                    ├────────────────────>│                     │
-       │                    │                     │ https://s3.../...  │
-       │                    │<────────────────────┤                     │
-       │                    │                     │                     │
-       │                    │ INSERT INTO files   │                     │
-       │                    │ (filename, url,     │                     │
-       │                    │  userId, mimeType)  │                     │
-       │                    ├──────────────────────────────────────────>│
-       │                    │                     │                     │
-       │<───────────────────┴─────────────────────┴─────────────────────│
-       │ 201 Created
-       │ { id, filename, url, mimeType, size }
+```mermaid
+sequenceDiagram
+    participant Frontend as 프론트엔드
+    participant NestJS as NestJS API
+    participant S3 as AWS S3
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/file/upload (multipart/form-data)
+    NestJS->>NestJS: 파일 검증 및 고유 파일명 생성
+    NestJS->>S3: 업로드 파일 PUT
+    S3-->>NestJS: 공개 URL 반환
+    NestJS->>Postgres: 파일 메타데이터 INSERT
+    NestJS-->>Frontend: 201 Created (file metadata payload)
 ```
 
 ## 페이지 게시 플로우
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │
-│  프론트엔드  │      │  NestJS API  │      │  PostgreSQL  │
-│             │      │              │      │              │
-│ 1. 사용자   │      │ 3. 페이지    │      │ 6. Page      │
-│    페이지   │      │    데이터    │      │    레코드    │
-│    폼 작성  │      │    검증     │      │    생성      │
-│             │      │ 4. slug      │      │              │
-│ 2. POST     │      │    생성     │      │              │
-│    /publish │      │ 5. 컴포넌트 │      │              │
-│             │      │    데이터    │      │              │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │
-       │ POST /api/page/publish                  │
-       │ { title, slug, componentData }          │
-       │                    │                     │
-       │                    │ BEGIN TRANSACTION  │
-       │                    ├────────────────────>│
-       │                    │                     │
-       │                    │ INSERT INTO pages   │
-       │                    ├────────────────────>│
-       │                    │                     │
-       │                    │ COMMIT              │
-       │                    ├────────────────────>│
-       │                    │                     │
-       │<───────────────────┴─────────────────────│
-       │ 201 Created
-       │ { id, slug, title, isPublished, ... }
+```mermaid
+sequenceDiagram
+    participant Frontend as 프론트엔드
+    participant NestJS as NestJS API
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/page/publish (title, slug, componentData)
+    NestJS->>NestJS: 페이지 데이터 검증 및 slug 생성
+    NestJS->>Postgres: BEGIN TRANSACTION
+    NestJS->>Postgres: INSERT INTO pages
+    NestJS->>Postgres: COMMIT
+    Postgres-->>NestJS: 생성된 Page 레코드
+    NestJS-->>Frontend: 201 Created (page payload)
 ```
 
 ## 다음 단계

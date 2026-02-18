@@ -73,26 +73,17 @@ LangChain의 **에이전트**는 다음을 수행하는 AI입니다:
 
 모청 시스템은 전문 에이전트가 있는 **다중 에이전트 아키텍처**를 사용합니다:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      Main Agent                             │
-│                  (오케스트레이터)                           │
-│                  GPT-4o-mini                                │
-├─────────────────────────────────────────────────────────────┤
-│  책임:                                                      │
-│  - 사용자 의도 이해                                         │
-│  - 호출할 하위 에이전트 결정                                │
-│  - 하위 에이전트 응답 조정                                 │
-│  - 최종 응답 생성                                           │
-└──────────┬──────────┬────────────┬─────────────────────────┘
-           │          │            │
-           ▼          ▼            ▼
-    ┌──────────┐ ┌─────────┐ ┌────────────┐
-    │ Context  │ │   Map   │ │   Output   │
-    │  Agent   │ │ Agent   │ │   Agent    │
-    └──────────┘ └─────────┘ └────────────┘
-    (데이터     (위치     (응답
-     가져오기)   검색)     포맷팅)
+```mermaid
+flowchart TB
+    Main["Main Agent (오케스트레이터) / GPT-4o-mini"]
+    Responsibilities["책임 / - 사용자 의도 이해 / - 호출할 하위 에이전트 결정 / - 하위 에이전트 응답 조정 / - 최종 응답 생성"]
+    Context["Context Agent / 데이터 가져오기"]
+    Map["Map Agent / 위치 검색"]
+    Output["Output Agent / 응답 포맷팅"]
+    Main --- Responsibilities
+    Main --> Context
+    Main --> Map
+    Main --> Output
 ```
 
 ### 에이전트 책임
@@ -161,16 +152,14 @@ Output Agent에는 다양한 응답을 위한 **1427줄**의 도구(`output_tool
 
 ### Celery 아키텍처
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│  FastAPI    │      │    Redis     │      │   Celery     │
-│  (Producer) │─────>│   (Broker)   │<─────│   Worker     │
-│             │      │              │      │              │
-│ POST /chat  │      │  작업 큐     │      │  - 작업 실행 │
-│ returns     │      │              │      │  - AI 호출   │
-│ immediately │      │              │      │  - 결과 게시 │
-│             │      │              │      │              │
-└─────────────┘      └──────────────┘      └──────────────┘
+```mermaid
+flowchart TB
+    FastAPI["FastAPI (Producer) / POST /chat 즉시 반환"]
+    Redis["Redis (Broker) / 작업 큐"]
+    Celery["Celery Worker / - 작업 실행 / - AI 호출 / - 결과 게시"]
+    FastAPI -->|작업 큐잉| Redis
+    Redis -->|작업 전달| Celery
+    Celery -->|결과 게시| Redis
 ```
 
 ### 작업 플로우
@@ -224,35 +213,15 @@ celery_app.conf.update(
 
 ### Pub/Sub 아키텍처
 
-```
-┌──────────────┐      ┌──────────────────────────────────────┐
-│   Celery     │      │              Redis                   │
-│   Worker     │─────>│         Pub/Sub 시스템               │
-│              │      │                                      │
-│  - AI 실행   │      │  채널: chat:{session_id}             │
-│  - 응답 생성 │      │                                      │
-│              │      │  메시지:                             │
-│  - 게시     │      │  - { type: "text", content: "..." }  │
-└──────────────┘      │  - { type: "component", ... }        │
-                      └──────────┬───────────────────────────┘
-                                   │
-                                   │ 구독
-                                   ▼
-                         ┌──────────────────┐
-                         │  NestJS 백엔드   │
-                         │  (구독자)        │
-                         │                  │
-                         │  - 구독          │
-                         │  - Socket.IO로   │
-                         │    전달          │
-                         └────────┬─────────┘
-                                  │ Socket.IO로 emit
-                                  ▼
-                         ┌──────────────────┐
-                         │   프론트엔드      │
-                         │   (Socket.IO     │
-                         │    클라이언트)    │
-                         └──────────────────┘
+```mermaid
+flowchart TB
+    Celery["Celery Worker / - AI 실행 / - 응답 생성 / - 메시지 게시"]
+    Redis["Redis Pub/Sub 시스템 / chat-session 채널 / text 또는 component payload"]
+    NestJS["NestJS 백엔드 (구독자) / - 채널 구독 / - Socket.IO 전달"]
+    Frontend["프론트엔드 (Socket.IO 클라이언트)"]
+    Celery -->|publish| Redis
+    Redis -->|구독 전달| NestJS
+    NestJS -->|Socket.IO로 emit| Frontend
 ```
 
 ### 채널 이름 지정
@@ -290,114 +259,49 @@ Redis에 게시된 메시지는 이 형식을 가집니다:
 
 ### 완전한 흐름 다이어그램
 
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant FA as FA
+    participant CW as CW
+    participant RD as RD
+    FE->>NB: chat-message
+    NB->>NB: 세션 생성/가져오기
+    NB->>NB: 웨딩 컨텍스트 조회
+    NB->>FA: POST /chat
+    FA->>CW: process_chat_message.delay() 큐잉
+    FA-->>NB: 202 Accepted
+    NB-->>FE: message-accepted
+    NB->>RD: chat 채널 구독
+    CW->>CW: Main Agent 초기화 및 처리
+    Note over CW: Main Agent가 Context/Map/Output 에이전트 오케스트레이션
+    CW->>RD: 응답 스트리밍
+    RD-->>NB: 구독 메시지 전달
+    NB-->>FE: newMessage
+    FE->>FE: UI 업데이트
 ```
-사용자 입력 (프론트엔드)
-      │
-      │ Socket.IO: chat-message
-      ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      NestJS 백엔드                           │
-├─────────────────────────────────────────────────────────────┤
-│  1. Socket.IO로 chat-message 수신                          │
-│  2. 세션 생성/가져오기                                      │
-│  3. PostgreSQL에서 웨딩 컨텍스트 가져오기                  │
-│  4. Agent Manager으로 HTTP POST 전송                       │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ HTTP POST /chat
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  FastAPI Agent Manager                      │
-├─────────────────────────────────────────────────────────────┤
-│  5. 채팅 요청 수신                                         │
-│  6. Celery에 작업 큐잉: process_chat_message.delay()      │
-│  7. 즉시 202 Accepted 반환                                 │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ NestJS로 반환
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      NestJS 백엔드                           │
-├─────────────────────────────────────────────────────────────┤
-│  8. Socket.IO을 통해 프론트엔드로 "message-accepted" emit  │
-│  9. Redis 채널 구독: chat:{session_id}                     │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ (한편, 백그라운드에서...)
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    Celery Worker                            │
-├─────────────────────────────────────────────────────────────┤
-│  10. 큐에서 작업 수신                                       │
-│  11. Main Agent 초기화                                     │
-│  12. LangChain으로 메시지 처리:                            │
-│      - Main Agent이 호출할 하위 에이전트 결정              │
-│      - Context Agent이 웨딩 데이터 가져오기                │
-│      - Map Agent이 위치 검색                               │
-│      - Output Agent이 응답 포맷                             │
-│  13. Redis pub/sub을 통해 응답 스트리밍                   │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Redis pubsub.publish()
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                        Redis                                │
-├─────────────────────────────────────────────────────────────┤
-│  채널: chat:{session_id}                                   │
-│  메시지:                                                    │
-│    { type: "text", content: "네! 확인해 드릴게요..." }      │
-│    { type: "component", component: {...} }                 │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Redis 구독이 전달
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      NestJS 백엔드                           │
-├─────────────────────────────────────────────────────────────┤
-│  14. RedisService이 Redis에서 메시지 수신                  │
-│  15. Socket.IO으로 전달                                    │
-│  16. 프론트엔드로 "newMessage" emit                         │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Socket.IO: newMessage
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       프론트엔드                              │
-├─────────────────────────────────────────────────────────────┤
-│  17. Socket.IO 클라이언트가 "newMessage" 수신              │
-│  18. 응답으로 UI 업데이트                                  │
-└─────────────────────────────────────────────────────────────┘
-```
+이 섹션 약어: `FE` = 프론트엔드, `NB` = NestJS 백엔드, `FA` = FastAPI Agent Manager, `CW` = Celery Worker, `RD` = Redis.
 
 ### 타이밍 다이어그램
 
-```
-프론트엔드   NestJS      FastAPI     Celery      Redis      NestJS      프론트엔드
-   │           │           │           │           │           │           │
-   │chat-msg   │           │           │           │           │           │
-   ├──────────>│           │           │           │           │           │
-   │           │POST /chat │           │           │           │           │
-   │           ├──────────>│           │           │           │           │
-   │           │           │작업 큐    │           │           │           │
-   │           │           ├───────────>│           │           │           │
-   │           │202 OK     │           │           │           │           │
-   │<──────────┴───────────│           │           │           │           │
-   │           │           │           │           │           │           │
-   │accepted   │           │           │           │           │           │
-   │<───────────│           │           │           │           │           │
-   │           │구독       │           │           │           │           │
-   │           ├───────────────────────────────────────────>│           │
-   │           │           │           │처리       │           │           │
-   │           │           │           │AI로       │           │           │
-   │           │           │           ├───────────>│           │           │
-   │           │           │           │게시       │           │           │
-   │           │           │           ├──────────>│           │           │
-   │           │           │           │           │전달       │           │
-   │           │           │           │           ├──────────>│           │
-   │           │           │           │           │newMessage │           │
-   │           │           │           │           ├──────────────────────>│
-   │newMessage │           │           │           │           │           │
-   │<──────────────────────────────────────────────────────────────────────│
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant FA as FA
+    participant CW as CW
+    participant RD as RD
+    FE->>NB: chat-msg
+    NB->>FA: POST /chat
+    FA->>CW: 작업 큐잉
+    FA-->>NB: 202 OK
+    NB-->>FE: accepted
+    NB->>RD: 채널 구독
+    CW->>CW: AI 처리
+    CW->>RD: 결과 게시
+    RD-->>NB: 메시지 전달
+    NB-->>FE: newMessage
 ```
 
 ## 프론트엔드 개발자를 위한 주요 차이점

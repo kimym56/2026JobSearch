@@ -73,26 +73,17 @@ An **agent** in LangChain is an AI that:
 
 The Mocheong system uses a **multi-agent architecture** with specialized agents:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      Main Agent                             │
-│                  (Orchestrator)                             │
-│                  GPT-4o-mini                                │
-├─────────────────────────────────────────────────────────────┤
-│  Responsibilities:                                          │
-│  - Understand user intent                                   │
-│  - Decide which sub-agent to call                           │
-│  - Coordinate sub-agent responses                           │
-│  - Generate final response                                  │
-└──────────┬──────────┬────────────┬─────────────────────────┘
-           │          │            │
-           ▼          ▼            ▼
-    ┌──────────┐ ┌─────────┐ ┌────────────┐
-    │ Context  │ │   Map   │ │   Output   │
-    │  Agent   │ │ Agent   │ │   Agent    │
-    └──────────┘ └─────────┘ └────────────┘
-    (Data       (Location   (Response
-     Fetch)      Search)     Formatting)
+```mermaid
+flowchart TB
+    Main["Main Agent (Orchestrator) / GPT-4o-mini"]
+    Responsibilities["Responsibilities / - Understand user intent / - Decide which sub-agent to call / - Coordinate sub-agent responses / - Generate final response"]
+    Context["Context Agent / Data fetch"]
+    Map["Map Agent / Location search"]
+    Output["Output Agent / Response formatting"]
+    Main --- Responsibilities
+    Main --> Context
+    Main --> Map
+    Main --> Output
 ```
 
 ### Agent Responsibilities
@@ -161,17 +152,14 @@ The Output Agent has **1427 lines** of tools (`output_tools.py`) for various res
 
 ### Celery Architecture
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│  FastAPI    │      │    Redis     │      │   Celery     │
-│  (Producer) │─────>│   (Broker)   │<─────│   Worker     │
-│             │      │              │      │              │
-│ POST /chat  │      │  Task Queue  │      │  - Executes  │
-│ returns     │      │              │      │    tasks     │
-│ immediately │      │              │      │  - Calls AI  │
-│             │      │              │      │  - Publishes │
-└─────────────┘      └──────────────┘      │    result    │
-                                            └──────────────┘
+```mermaid
+flowchart TB
+    FastAPI["FastAPI (Producer) / POST /chat returns immediately"]
+    Redis["Redis (Broker) / Task Queue"]
+    Celery["Celery Worker / - Executes tasks / - Calls AI / - Publishes result"]
+    FastAPI -->|Queue task| Redis
+    Redis -->|Deliver task| Celery
+    Celery -->|Publish result| Redis
 ```
 
 ### Task Flow
@@ -225,35 +213,15 @@ celery_app.conf.update(
 
 ### Pub/Sub Architecture
 
-```
-┌──────────────┐      ┌──────────────────────────────────────┐
-│   Celery     │      │              Redis                   │
-│   Worker     │─────>│         Pub/Sub System              │
-│              │      │                                      │
-│  - Runs AI   │      │  Channel: chat:{session_id}          │
-│  - Generates │      │                                      │
-│    response  │      │  Messages:                           │
-│              │      │  - { type: "text", content: "..." }  │
-│  - Publishes │      │  - { type: "component", ... }        │
-└──────────────┘      └──────────┬───────────────────────────┘
-                                 │
-                                 │ subscribe
-                                 ▼
-                       ┌──────────────────┐
-                       │  NestJS Backend  │
-                       │  (Subscriber)    │
-                       │                  │
-                       │  - Subscribes    │
-                       │  - Forwards to   │
-                       │    Socket.IO     │
-                       └────────┬─────────┘
-                                │ emit via Socket.IO
-                                ▼
-                       ┌──────────────────┐
-                       │   Frontend       │
-                       │   (Socket.IO     │
-                       │    Client)       │
-                       └──────────────────┘
+```mermaid
+flowchart TB
+    Celery["Celery Worker / - Runs AI / - Generates response / - Publishes messages"]
+    Redis["Redis Pub/Sub System / chat-session channel / text or component payloads"]
+    NestJS["NestJS Backend (Subscriber) / - Subscribes / - Forwards to Socket.IO"]
+    Frontend["Frontend (Socket.IO Client)"]
+    Celery -->|publish| Redis
+    Redis -->|subscribe| NestJS
+    NestJS -->|emit via Socket.IO| Frontend
 ```
 
 ### Channel Naming
@@ -291,114 +259,49 @@ Messages published to Redis have this format:
 
 ### Complete Flow Diagram
 
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant FA as FA
+    participant CW as CW
+    participant RD as RD
+    FE->>NB: chat-message
+    NB->>NB: Create/retrieve session
+    NB->>NB: Fetch wedding context
+    NB->>FA: POST /chat
+    FA->>CW: Queue process_chat_message.delay()
+    FA-->>NB: 202 Accepted
+    NB-->>FE: message-accepted
+    NB->>RD: Subscribe chat channel
+    CW->>CW: Initialize Main Agent
+    Note over CW: Main Agent orchestrates Context/Map/Output agents
+    CW->>RD: Stream responses
+    RD-->>NB: Deliver subscribed messages
+    NB-->>FE: newMessage
+    FE->>FE: Update UI
 ```
-User Input (Frontend)
-      │
-      │ Socket.IO: chat-message
-      ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      NestJS Backend                         │
-├─────────────────────────────────────────────────────────────┤
-│  1. Receive chat-message via Socket.IO                     │
-│  2. Create/retrieve session                                │
-│  3. Fetch wedding context from PostgreSQL                  │
-│  4. Send HTTP POST to Agent Manager                        │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ HTTP POST /chat
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  FastAPI Agent Manager                      │
-├─────────────────────────────────────────────────────────────┤
-│  5. Receive chat request                                   │
-│  6. Queue task in Celery: process_chat_message.delay()     │
-│  7. Return 202 Accepted immediately                        │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Returns to NestJS
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      NestJS Backend                         │
-├─────────────────────────────────────────────────────────────┤
-│  8. Emit "message-accepted" to frontend via Socket.IO       │
-│  9. Subscribe to Redis channel: chat:{session_id}          │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ (Meanwhile, in background...)
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    Celery Worker                            │
-├─────────────────────────────────────────────────────────────┤
-│ 10. Pick up task from queue                                │
-│ 11. Initialize Main Agent                                   │
-│ 12. Process message with LangChain:                        │
-│      - Main Agent decides which sub-agents to call         │
-│      - Context Agent fetches wedding data                  │
-│      - Map Agent searches locations                        │
-│      - Output Agent formats response                       │
-│ 13. Stream responses via Redis pub/sub                     │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Redis pubsub.publish()
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                        Redis                                │
-├─────────────────────────────────────────────────────────────┤
-│  Channel: chat:{session_id}                                │
-│  Messages:                                                  │
-│    { type: "text", content: "Sure! Let me check..." }      │
-│    { type: "component", component: {...} }                 │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Redis subscription delivers
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      NestJS Backend                         │
-├─────────────────────────────────────────────────────────────┤
-│  14. RedisService receives message from Redis               │
-│  15. Forward to Socket.IO                                  │
-│  16. Emit "newMessage" to frontend                         │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         │ Socket.IO: newMessage
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       Frontend                              │
-├─────────────────────────────────────────────────────────────┤
-│  17. Socket.IO client receives "newMessage"                │
-│  18. Update UI with response                               │
-└─────────────────────────────────────────────────────────────┘
-```
+Abbreviations used in this section: `FE` = Frontend, `NB` = NestJS Backend, `FA` = FastAPI Agent Manager, `CW` = Celery Worker, `RD` = Redis.
 
 ### Timing Diagram
 
-```
-Frontend    NestJS      FastAPI     Celery      Redis      NestJS      Frontend
-   │           │           │           │           │           │           │
-   │chat-msg   │           │           │           │           │           │
-   ├──────────>│           │           │           │           │           │
-   │           │POST /chat │           │           │           │           │
-   │           ├──────────>│           │           │           │           │
-   │           │           │queue task │           │           │           │
-   │           │           ├───────────>│           │           │           │
-   │           │202 OK     │           │           │           │           │
-   │<──────────┴───────────│           │           │           │           │
-   │           │           │           │           │           │           │
-   │accepted   │           │           │           │           │           │
-   │<───────────│           │           │           │           │           │
-   │           │subscribe  │           │           │           │           │
-   │           ├───────────────────────────────────────────>│           │
-   │           │           │           │process    │           │           │
-   │           │           │           │with AI    │           │           │
-   │           │           │           ├───────────>│           │           │
-   │           │           │           │publish    │           │           │
-   │           │           │           ├──────────>│           │           │
-   │           │           │           │           │forward    │           │
-   │           │           │           │           ├──────────>│           │
-   │           │           │           │           │newMessage │           │
-   │           │           │           │           ├──────────────────────>│
-   │newMessage │           │           │           │           │           │
-   │<──────────────────────────────────────────────────────────────────────│
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant FA as FA
+    participant CW as CW
+    participant RD as RD
+    FE->>NB: chat-msg
+    NB->>FA: POST /chat
+    FA->>CW: queue task
+    FA-->>NB: 202 OK
+    NB-->>FE: accepted
+    NB->>RD: subscribe
+    CW->>CW: process with AI
+    CW->>RD: publish
+    RD-->>NB: forward
+    NB-->>FE: newMessage
 ```
 
 ## Key Differences for Frontend Developers

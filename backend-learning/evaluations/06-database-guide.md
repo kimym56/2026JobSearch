@@ -21,15 +21,16 @@ This guide explains the database structure and data models used in the Mocheong 
 
 ### Database Schema
 
-```
-mocheong_db
-├── users              # User accounts
-├── pages              # Wedding invitation pages
-├── chats              # Chat messages
-├── payments           # Payment transactions
-├── files              # Uploaded file metadata
-├── invitations        # Invitation codes
-└── page_views         # Page view analytics
+```mermaid
+flowchart TD
+    DB["mocheong_db"]
+    DB --> USERS["users / User accounts"]
+    DB --> PAGES["pages / Wedding invitation pages"]
+    DB --> CHATS["chats / Chat messages"]
+    DB --> PAYMENTS["payments / Payment transactions"]
+    DB --> FILES["files / Uploaded file metadata"]
+    DB --> INVITATIONS["invitations / Invitation codes"]
+    DB --> PAGE_VIEWS["page_views / Page view analytics"]
 ```
 
 ## TypeORM Entities
@@ -150,27 +151,20 @@ export class Chat {
 
 ## Entity Relationships
 
-```
-┌─────────────┐       ┌─────────────┐       ┌─────────────┐
-│    users    │       │    pages    │       │  page_views │
-│-------------│       │-------------│       │-------------│
-│ id (PK)     │<──────│ userId (FK) │       │ pageId (FK) │
-│ email       │  1:N  │ id (PK)     │<──────│ id (PK)     │
-│ password    │       │ slug        │  1:N  │ timestamp   │
-│ name        │       │ title       │       │ visitorId   │
-│ isAdmin     │       │ componentData│       └─────────────┘
-└─────────────┘       └─────────────┘
-       │
-       │ has many
-       ├──────────────────┐
-       │                  │
-┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-│  payments   │  │    chats    │  │    files    │
-│-------------│  │-------------│  │-------------│
-│ userId (FK) │  │ userId (FK) │  │ userId (FK) │
-│ amount      │  │ room        │  │ filename    │
-│ status      │  │ message     │  │ url         │
-└─────────────┘  └─────────────┘  └─────────────┘
+```mermaid
+flowchart TB
+    USERS["users / id, email, password, name, isAdmin"]
+    PAGES["pages / id, userId, slug, title, componentData"]
+    PAGEVIEWS["page_views / id, pageId, timestamp, visitorId"]
+    PAYMENTS["payments / userId, amount, status"]
+    CHATS["chats / userId, room, message"]
+    FILES["files / userId, filename, url"]
+
+    USERS -->|1:N| PAGES
+    PAGES -->|1:N| PAGEVIEWS
+    USERS -->|1:N| PAYMENTS
+    USERS -->|1:N| CHATS
+    USERS -->|1:N| FILES
 ```
 
 ## Repository Pattern

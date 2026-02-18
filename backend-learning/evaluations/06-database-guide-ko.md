@@ -21,15 +21,16 @@
 
 ### 데이터베이스 스키마
 
-```
-mocheong_db
-├── users              # 사용자 계정
-├── pages              # 웨딩 청첩장 페이지
-├── chats              # 채팅 메시지
-├── payments           # 결제 거래
-├── files              # 업로드된 파일 메타데이터
-├── invitations        # 초대 코드
-└── page_views         # 페이지 조회 분석
+```mermaid
+flowchart TD
+    DB["mocheong_db"]
+    DB --> USERS["users / 사용자 계정"]
+    DB --> PAGES["pages / 웨딩 청첩장 페이지"]
+    DB --> CHATS["chats / 채팅 메시지"]
+    DB --> PAYMENTS["payments / 결제 거래"]
+    DB --> FILES["files / 업로드된 파일 메타데이터"]
+    DB --> INVITATIONS["invitations / 초대 코드"]
+    DB --> PAGE_VIEWS["page_views / 페이지 조회 분석"]
 ```
 
 ## TypeORM 엔티티
@@ -116,27 +117,20 @@ export class Page {
 
 ## 엔티티 관계
 
-```
-┌─────────────┐       ┌─────────────┐       ┌─────────────┐
-│    users    │       │    pages    │       │  page_views │
-│-------------│       │-------------│       │-------------│
-│ id (PK)     │<──────│ userId (FK) │       │ pageId (FK) │
-│ email       │  1:N  │ id (PK)     │<──────│ id (PK)     │
-│ password    │       │ slug        │  1:N  │ timestamp   │
-│ name        │       │ title       │       │ visitorId   │
-│ isAdmin     │       │ componentData│       └─────────────┘
-└─────────────┘       └─────────────┘
-       │
-       │ has many
-       ├──────────────────┐
-       │                  │
-┌─────────────┐  ┌─────────────┐  ┌─────────────┐
-│  payments   │  │    chats    │  │    files    │
-│-------------│  │-------------│  │-------------│
-│ userId (FK) │  │ userId (FK) │  │ userId (FK) │
-│ amount      │  │ room        │  │ filename    │
-│ status      │  │ message     │  │ url         │
-└─────────────┘  └─────────────┘  └─────────────┘
+```mermaid
+flowchart TB
+    USERS["users / id, email, password, name, isAdmin"]
+    PAGES["pages / id, userId, slug, title, componentData"]
+    PAGEVIEWS["page_views / id, pageId, timestamp, visitorId"]
+    PAYMENTS["payments / userId, amount, status"]
+    CHATS["chats / userId, room, message"]
+    FILES["files / userId, filename, url"]
+
+    USERS -->|1:N| PAGES
+    PAGES -->|1:N| PAGEVIEWS
+    USERS -->|1:N| PAYMENTS
+    USERS -->|1:N| CHATS
+    USERS -->|1:N| FILES
 ```
 
 ## 리포지토리 패턴

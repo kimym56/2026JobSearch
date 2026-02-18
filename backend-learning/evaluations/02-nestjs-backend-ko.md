@@ -40,68 +40,27 @@
 
 ## 디렉토리 구조
 
-```
-backend/src/
-├── main.ts                    # 애플리케이션 진입점
-├── app.module.ts              # 루트 모듈
-│
-├── auth/                      # 인증 모듈
-│   ├── auth.controller.ts     # 로그인/등록 엔드포인트
-│   ├── auth.service.ts        # 인증 로직
-│   ├── jwt.strategy.ts        # JWT 검증
-│   ├── local.strategy.ts      # 로컬 로그인 전략
-│   └── dto/
-│       ├── login.dto.ts       # 로그인 요청 스키마
-│       └── register.dto.ts    # 등록 요청 스키마
-│
-├── chat/                      # 채팅 및 WebSocket 모듈
-│   ├── chat.gateway.ts        # Socket.IO 게이트웨이
-│   ├── chat.service.ts        # 채팅 로직
-│   ├── agent.service.ts       # Agent Manager 클라이언트
-│   ├── redis.service.ts       # Redis pub/sub 클라이언트
-│   └── session.service.ts     # 세션 관리
-│
-├── page/                      # 페이지/CMS 모듈
-│   ├── page.controller.ts     # 페이지 CRUD 엔드포인트
-│   ├── page.service.ts        # 페이지 로직
-│   └── markdown-converter.service.ts
-│
-├── file/                      # 파일 업로드 모듈
-│   ├── file.controller.ts     # 업로드 엔드포인트
-│   ├── file.service.ts        # 파일 로직
-│   └── s3.service.ts          # AWS S3 통합
-│
-├── payment/                   # 결제 모듈
-│   ├── payment.controller.ts  # 결제 엔드포인트
-│   └── payment.service.ts
-│
-├── invitation/                # 초대 모듈
-│   ├── invitation.controller.ts
-│   └── invitation.service.ts
-│
-├── admin/                     # 관리자 모듈
-│   ├── admin.controller.ts
-│   └── admin.service.ts
-│
-├── entities/                  # 데이터베이스 모델 (TypeORM)
-│   ├── user.entity.ts
-│   ├── chat.entity.ts
-│   ├── page.entity.ts
-│   ├── payment.entity.ts
-│   ├── invitation.entity.ts
-│   ├── file.entity.ts
-│   └── page-view.entity.ts
-│
-├── database/                  # 리포지토리 레이어
-│   ├── base-repository.ts
-│   ├── user.repository.ts
-│   └── ...
-│
-├── logger/                    # Winston 로거
-│   └── winston-logger.service.ts
-│
-└── common/                    # 공유 유틸리티
-    └── http-exception.filter.ts
+```mermaid
+flowchart TD
+    SRC["backend/src"]
+    SRC --> CORE["Core / - main.ts / - app.module.ts"]
+
+    SRC --> FEATURES["기능 모듈"]
+    FEATURES --> AUTH["auth/ / controller, service, / jwt.strategy, local.strategy, / dto(login/register)"]
+    FEATURES --> CHAT["chat/ / gateway, service, / agent, redis, session"]
+    FEATURES --> PAGE["page/ / controller, service, / markdown-converter"]
+    FEATURES --> FILE["file/ / controller, service, s3"]
+    FEATURES --> PAYMENT["payment/ / controller, service"]
+    FEATURES --> INVITATION["invitation/ / controller, service"]
+    FEATURES --> ADMIN["admin/ / controller, service"]
+
+    SRC --> DATALAYER["데이터 레이어"]
+    DATALAYER --> ENTITIES["entities/ / user, chat, page, payment, / invitation, file, page-view"]
+    DATALAYER --> REPOS["database/ / base-repository, user.repository, ..."]
+
+    SRC --> PLATFORM["플랫폼/공통"]
+    PLATFORM --> LOGGER["logger/ / winston-logger.service.ts"]
+    PLATFORM --> COMMON["common/ / http-exception.filter.ts"]
 ```
 
 ## REST API 엔드포인트
@@ -304,21 +263,16 @@ Content-Type: application/json
 
 ### JWT 작동 방식
 
-```
-┌─────────┐                   ┌──────────────┐                 ┌──────────┐
-│         │                   │              │                 │          │
-│ 프론트엔드│─── POST login ────>│ NestJS API   │─── verify ────>│ Database │
-│         │                   │              │    password     │          │
-│         │<── JWT 토큰 ──────│              │<────────────────│          │
-│         │                   │              │                 │          │
-└─────────┘                   └──────────────┘                 └──────────┘
-      │
-      │ 토큰 저장
-      │ (localStorage/cookie)
-      │
-      │ 후속 요청에 사용
-      │ Authorization: Bearer {token}
-      │
+```mermaid
+sequenceDiagram
+    participant Frontend as 프론트엔드
+    participant NestJS as NestJS API
+    participant Database
+    Frontend->>NestJS: POST /api/auth/login
+    NestJS->>Database: 비밀번호 해시 검증
+    Database-->>NestJS: 사용자 레코드
+    NestJS-->>Frontend: JWT 토큰
+    Note over Frontend: 토큰을 localStorage 또는 cookie에 저장하고 후속 요청에서 Authorization Bearer 토큰으로 사용.
 ```
 
 ### 프론트엔드에서 JWT 사용

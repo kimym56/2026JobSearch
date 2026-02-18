@@ -321,23 +321,23 @@ Open: `http://localhost:3000/admin/evaluation`
 
 ## File Structure
 
-```
-mocheong/
-├── agent_mgr/
-│   └── tests/trajectory/
-│       ├── run_evaluation.py          # NEW: Python test runner
-│       └── test_results/              # NEW: Cached results dir
-│           └── main_agent_scenarios_results.json
-├── backend/src/admin/
-│   ├── admin.controller.ts            # MODIFIED: Added evaluation endpoints
-│   └── admin.service.ts               # MODIFIED: Added evaluation methods
-└── ui/src/
-    ├── layouts/
-    │   └── Admin.tsx                  # MODIFIED: Added evaluation route
-    ├── components/Sidebar/
-    │   └── Sidebar.tsx                # MODIFIED: Added evaluation link
-    └── views/admin/
-        └── Evaluation.tsx             # NEW: Evaluation page component
+```mermaid
+flowchart TD
+    ROOT["mocheong/"]
+
+    ROOT --> AGENT_MGR["agent_mgr/tests/trajectory"]
+    AGENT_MGR --> RUN_EVAL["run_evaluation.py / NEW: Python test runner"]
+    AGENT_MGR --> TEST_RESULTS["test_results/ / NEW: Cached results dir"]
+    TEST_RESULTS --> RESULTS_JSON["main_agent_scenarios_results.json"]
+
+    ROOT --> ADMIN_SRC["backend/src/admin"]
+    ADMIN_SRC --> ADMIN_CONTROLLER["admin.controller.ts / MODIFIED: Added evaluation endpoints"]
+    ADMIN_SRC --> ADMIN_SERVICE["admin.service.ts / MODIFIED: Added evaluation methods"]
+
+    ROOT --> UI_SRC["ui/src"]
+    UI_SRC --> ADMIN_LAYOUT["layouts/Admin.tsx / MODIFIED: Added evaluation route"]
+    UI_SRC --> SIDEBAR["components/Sidebar/Sidebar.tsx / MODIFIED: Added evaluation link"]
+    UI_SRC --> EVALUATION_VIEW["views/admin/Evaluation.tsx / NEW: Evaluation page component"]
 ```
 
 ---

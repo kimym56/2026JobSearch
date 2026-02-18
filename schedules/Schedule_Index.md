@@ -1,7 +1,7 @@
-# Schedule Index (v9)
+# Schedule Index (v10)
 
 Quick reference for the current schedule:
-- Main file: `50_Day_Adjusted_Schedule_v9.md`
+- Main file: `50_Day_Adjusted_Schedule_v10.md`
 - Date range: **Mon, Jan 26, 2026 -> Thu, Mar 05, 2026**
 - Working days: **29** (weekends off)
 
@@ -9,10 +9,11 @@ Quick reference for the current schedule:
 
 ## Where Things Live
 
-- Daily time template and rules: top of `50_Day_Adjusted_Schedule_v9.md`
+- Daily time template and rules: top of `50_Day_Adjusted_Schedule_v10.md`
 - Day-by-day date map: the **Day Map (Day 1-29)** table
 - Side project priorities: **Side Project Roadmap (Daytime)**
 - Frontend prep integrated structure: **Frontend Job Prep Plan (Integrated 35:65)**
+- Special exception plan: **Special Catch-up Sprint (Feb 16-18, 2026)**
 
 ---
 
@@ -20,15 +21,14 @@ Quick reference for the current schedule:
 
 ### Phase 1 (Days 1-8: Jan 26 -> Feb 6)
 - Integrated learning: React docs + core challenges
-- Core Learning Block (1-4 PM): Learn → Apply → Explain
+- Core Learning Block (1-4 PM): Learn → Optional Apply → Flex Review
 - Deep Dive Block (8-10 PM): Interview questions / coding reps
 - Book reading integrated into Tue/Thu blocks
 
 ### Phase 2 (Days 9-18: Feb 9 -> Feb 20)
-- Challenges 5-10 + algorithm patterns
-- Core block: Advanced concepts (Context, performance, patterns)
-- Deep dive: Mock interviews + system design
-- Practice block: Timed reps + explain-aloud recordings
+- Feb 9-13: Original plan execution (algorithms + side project + frontend prep)
+- Feb 16-18: Special catch-up sprint (backlog recovery with partial availability)
+- Feb 19-20: Return to normal algorithm schedule (Trees, Graph BFS/DFS)
 
 ### Phase 3 (Days 19-27: Feb 23 -> Mar 5)
 - Advanced reps + mock interviews + applications
@@ -50,7 +50,8 @@ Quick reference for the current schedule:
 - Auth continues + builder integration
 
 ### Week 4 (Feb 16-20)
-- Store/publish persistence + Markdown to backend agent
+- Feb 16-18: Catch-up sprint + backend-learning docs understanding
+- Feb 19-20: Store/publish persistence + Markdown to backend agent
 
 ### Week 5 (Feb 23-27)
 - User features + quality + E2E review

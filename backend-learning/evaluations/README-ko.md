@@ -49,38 +49,13 @@
 
 ## 아키텍처 개요
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │
-│   React UI  │◄────►│ NestJS API   │◄────►│  PostgreSQL  │
-│  (Port 3001)│      │  (Port 3002) │      │  (Port 5432) │
-│             │      │              │      │              │
-└─────────────┘      └──────┬───────┘      └──────────────┘
-                            │
-                            │ Socket.IO (WebSocket)
-                            │ HTTP/REST
-                            │
-                    ┌───────▼────────┐
-                    │                │
-                    │ Agent Manager  │
-                    │   FastAPI      │
-                    │  (Port 8000)   │
-                    └───────┬────────┘
-                            │
-                    ┌───────▼────────┐
-                    │                │
-                    │   Celery       │
-                    │   Worker       │
-                    │                │
-                    └───────┬────────┘
-                            │
-                    ┌───────▼────────┐
-                    │                │
-                    │     Redis      │
-                    │  (Pub/Sub)     │
-                    │  (Celery Broker)│
-                    │  (Port 6379)   │
-                    └────────────────┘
+```mermaid
+flowchart TB
+    UI["React UI (포트 3001)"] <--> Nest["NestJS API (포트 3002)"]
+    Nest <--> Postgres["PostgreSQL (포트 5432)"]
+    Nest -->|Socket.IO (WebSocket) / HTTP/REST| AgentManager["Agent Manager FastAPI (포트 8000)"]
+    AgentManager --> Celery["Celery Worker"]
+    Celery --> Redis["Redis / Pub/Sub + Celery Broker / (포트 6379)"]
 ```
 
 ## 주요 기술

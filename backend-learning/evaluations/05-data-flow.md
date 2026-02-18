@@ -12,29 +12,17 @@ This guide provides detailed explanations of how data flows through the Mocheong
 
 ## User Registration Flow
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │
-│  Frontend   │      │  NestJS API  │      │  PostgreSQL  │
-│             │      │              │      │              │
-│ 1. User     │      │ 3. Validate  │      │ 5. Create    │
-│    fills    │      │    email     │      │    User      │
-│    form     │      │    format    │      │    record    │
-│             │      │              │      │              │
-│ 2. POST     │      │ 4. Hash      │      │ 6. Return    │
-│    /register│      │    password  │      │    User      │
-│             │      │              │      │              │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │
-       │ POST /api/auth/register                 │
-       │ { email, password, name }               │
-       │                    │                     │
-       │                    │ INSERT INTO users  │
-       │                    │ (email, hashed_pwd)│
-       │                    │                     │
-       │<───────────────────┴─────────────────────│
-       │ 201 Created
-       │ { id, email, name, createdAt }
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS API
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/auth/register (email, password, name)
+    NestJS->>NestJS: Validate email and password
+    NestJS->>NestJS: Hash password (bcrypt)
+    NestJS->>Postgres: INSERT INTO users
+    Postgres-->>NestJS: Created user
+    NestJS-->>Frontend: 201 Created (user payload)
 ```
 
 ### Step-by-Step
@@ -85,40 +73,21 @@ async register(email, password, name) {
 
 ## Login & Authentication Flow
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │      │              │
-│  Frontend   │      │  NestJS API  │      │  PostgreSQL  │      │    JWT       │
-│             │      │              │      │              │      │  Service     │
-│ 1. User     │      │ 3. Validate  │      │ 5. Compare   │      │              │
-│    enters   │      │    DTO       │      │    password  │      │ 7. Sign     │
-│    creds    │      │              │      │    hashes    │      │    token     │
-│             │      │ 4. Find user │      │              │      │              │
-│ 2. POST     │      │    by email  │      │ 6. Return    │      │ 8. Return    │
-│    /login   │      │              │      │    user      │      │    signed    │
-│             │      │              │      │              │      │    token     │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │                     │
-       │ POST /api/auth/login                     │                     │
-       │ { email, password }                      │                     │
-       │                    │                     │                     │
-       │                    │ SELECT * FROM users │                     │
-       │                    │ WHERE email = ?     │                     │
-       │                    │                     │                     │
-       │                    │<────────────────────│                     │
-       │                    │  user record (with password)             │
-       │                    │                     │                     │
-       │                    │ bcrypt.compare(plain, hashed)             │
-       │                    │                     │                     │
-       │                    │                     │                     │
-       │                    │                     │  jwt.sign({email, sub: id})
-       │                    │                     │                     │
-       │<───────────────────┴─────────────────────┴─────────────────────│
-       │ 200 OK
-       │ { access_token, user }
-       │
-       │ Store token in localStorage
-       │ Use for subsequent requests
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS API
+    participant Postgres as PostgreSQL
+    participant JWT as JWT Service
+    Frontend->>NestJS: POST /api/auth/login (email, password)
+    NestJS->>NestJS: Validate DTO
+    NestJS->>Postgres: SELECT user by email
+    Postgres-->>NestJS: User record (hashed password)
+    NestJS->>NestJS: bcrypt.compare(plain, hashed)
+    NestJS->>JWT: jwt.sign(payload)
+    JWT-->>NestJS: Signed token
+    NestJS-->>Frontend: 200 OK (token + user)
+    Note over Frontend: Store token in localStorage and use it as Authorization Bearer token.
 ```
 
 ### Step-by-Step
@@ -136,82 +105,46 @@ async register(email, password, name) {
 
 ### Protected Request Flow
 
-```
-Frontend                   NestJS                    JWT Strategy              PostgreSQL
-   │                           │                            │                     │
-   │ GET /api/page/my-pages    │                            │                     │
-   │ Authorization: Bearer XYZ │                            │                     │
-   ├──────────────────────────>│                            │                     │
-   │                           │ Verify JWT signature        │                     │
-   │                           ├───────────────────>        │                     │
-   │                           │ Valid token                │                     │
-   │                           │<───────────────────        │                     │
-   │                           │                            │                     │
-   │                           │ Extract user_id from token │                     │
-   │                           │                            │                     │
-   │                           │ SELECT * FROM pages        │                     │
-   │                           │ WHERE userId = ?           │                     │
-   │                           ├──────────────────────────────────────────────────>│
-   │                           │ pages                      │                     │
-   │                           │<──────────────────────────────────────────────────│
-   │                           │                            │                     │
-   │<───────────────────────────│                            │                     │
-   │ 200 OK [{ pages }]         │                            │                     │
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS
+    participant JWT as JWT Strategy
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: GET /api/page/my-pages (Authorization: Bearer XYZ)
+    NestJS->>JWT: Verify JWT signature
+    JWT-->>NestJS: Valid token + user_id
+    NestJS->>Postgres: SELECT * FROM pages WHERE userId = ?
+    Postgres-->>NestJS: pages
+    NestJS-->>Frontend: 200 OK (pages list)
 ```
 
 ## Chat Message Flow (Complete)
 
 This is the most complex flow, involving Socket.IO, HTTP, Redis, Celery, and LangChain agents.
 
+```mermaid
+sequenceDiagram
+    participant FE as FE
+    participant NB as NB
+    participant FA as FA
+    participant CW as CW
+    participant LC as LC
+    participant RD as RD
+    FE->>NB: chat-message
+    NB->>NB: Fetch wedding context
+    NB->>FA: POST /chat
+    FA->>CW: Queue task
+    FA-->>NB: 202 Accepted
+    NB-->>FE: message-accepted
+    NB->>RD: Subscribe chat channel
+    CW->>LC: Process with AI agents
+    LC-->>CW: Generated response
+    CW->>RD: Stream responses
+    RD-->>NB: Deliver subscribed messages
+    NB-->>FE: newMessage
 ```
-┌─────────┐   ┌──────────┐   ┌─────────────┐   ┌──────────┐   ┌─────────┐   ┌──────────┐
-│ Frontend│   │ NestJS   │   │ FastAPI     │   │ Celery   │   │LangChain│   │ Redis    │
-│         │   │ Backend  │   │ Agent Mgr   │   │ Worker   │   │ Agents  │   │ Pub/Sub │
-└─────────┘   └──────────┘   └─────────────┘   └──────────┘   └─────────┘   └──────────┘
-
-   │               │               │                │            │            │
-   │chat-message   │               │                │            │            │
-   ├──────────────>│               │                │            │            │
-   │               │               │                │            │            │
-   │               │Fetch wedding  │                │            │            │
-   │               │context from   │                │            │            │
-   │               │PostgreSQL     │                │            │            │
-   │               ├──────────────────────────────────────────────────────────>│
-   │<──────────────┤               │                │            │            │
-   │               │               │                │            │            │
-   │               │POST /chat     │                │            │            │
-   │               ├──────────────>│                │            │            │
-   │               │               │                │            │            │
-   │               │               │Queue Celery    │            │            │
-   │               │               │task            │            │            │
-   │               │               ├───────────────>│            │            │
-   │               │               │                │            │            │
-   │               │202 Accepted   │                │            │            │
-   │<──────────────┴───────────────│                │            │            │
-   │               │               │                │            │            │
-   │accepted       │               │                │            │            │
-   │<──────────────│               │                │            │            │
-   │               │               │                │            │            │
-   │               │Subscribe to   │                │            │            │
-   │               │Redis channel  │                │            │            │
-   │               ├──────────────────────────────────────────────────────────>│
-   │               │               │                │            │            │
-   │               │               │                │Process     │            │
-   │               │               │                │with AI     │            │
-   │               │               │                ├───────────>│            │
-   │               │               │                │            │            │
-   │               │               │                │Stream      │            │
-   │               │               │                │responses   │            │
-   │               │               │                ├────────────────────────>│
-   │               │               │                │            │            │
-   │               │               │                │            │            │
-   │               │<─────────────────────────────────────────────────────────│
-   │               │               │                │            │            │
-   │               │Emit via       │                │            │            │
-   │               │Socket.IO      │                │            │            │
-   │<──────────────│               │                │            │            │
-   │newMessage     │               │                │            │            │
-```
+Abbreviations: `FE` = Frontend, `NB` = NestJS Backend, `FA` = FastAPI Agent Manager, `CW` = Celery Worker, `LC` = LangChain, `RD` = Redis.
 
 ### Detailed Steps
 
@@ -244,36 +177,18 @@ The AI agent can respond with different message types:
 
 ## File Upload Flow
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │      │              │
-│  Frontend   │      │  NestJS API  │      │    AWS S3    │      │  PostgreSQL  │
-│             │      │              │      │              │      │              │
-│ 1. User     │      │ 3. Receive   │      │ 6. Upload    │      │ 8. Save      │
-│    selects  │      │    file      │      │    file      │      │    metadata  │
-│    file     │      │ 4. Validate  │      │              │      │              │
-│             │      │    (type,    │      │ 7. Return    │      │              │
-│ 2. POST     │      │    size)     │      │    URL       │      │              │
-│    /upload  │      │ 5. Generate  │      │              │      │              │
-│             │      │    unique    │      │              │      │              │
-│             │      │    filename  │      │              │      │              │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │                     │
-       │ multipart/form-data                     │                     │
-       │ file: [binary]                          │                     │
-       │                    │ PUT /{filename}    │                     │
-       │                    ├────────────────────>│                     │
-       │                    │                     │ https://s3.../...  │
-       │                    │<────────────────────┤                     │
-       │                    │                     │                     │
-       │                    │ INSERT INTO files   │                     │
-       │                    │ (filename, url,     │                     │
-       │                    │  userId, mimeType)  │                     │
-       │                    ├──────────────────────────────────────────>│
-       │                    │                     │                     │
-       │<───────────────────┴─────────────────────┴─────────────────────│
-       │ 201 Created
-       │ { id, filename, url, mimeType, size }
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS API
+    participant S3 as AWS S3
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/file/upload (multipart/form-data)
+    NestJS->>NestJS: Validate type/size and generate filename
+    NestJS->>S3: PUT uploaded filename
+    S3-->>NestJS: Public URL
+    NestJS->>Postgres: INSERT file metadata
+    NestJS-->>Frontend: 201 Created (file metadata payload)
 ```
 
 ### Step-by-Step
@@ -290,35 +205,18 @@ The AI agent can respond with different message types:
 
 ## Page Publish Flow
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │
-│  Frontend   │      │  NestJS API  │      │  PostgreSQL  │
-│             │      │              │      │              │
-│ 1. User     │      │ 3. Validate  │      │ 6. Create    │
-│    fills    │      │    page data │      │    Page      │
-│    page     │      │ 4. Generate  │      │    record    │
-│    form     │      │    slug      │      │              │
-│             │      │ 5. Create    │      │              │
-│ 2. POST     │      │    component │      │              │
-│    /publish │      │    data      │      │              │
-└──────┬──────┘      └──────┬───────┘      └──────┬───────┘
-       │                    │                     │
-       │ POST /api/page/publish                  │
-       │ { title, slug, componentData }          │
-       │                    │                     │
-       │                    │ BEGIN TRANSACTION  │
-       │                    ├────────────────────>│
-       │                    │                     │
-       │                    │ INSERT INTO pages   │
-       │                    ├────────────────────>│
-       │                    │                     │
-       │                    │ COMMIT              │
-       │                    ├────────────────────>│
-       │                    │                     │
-       │<───────────────────┴─────────────────────│
-       │ 201 Created
-       │ { id, slug, title, isPublished, ... }
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant NestJS as NestJS API
+    participant Postgres as PostgreSQL
+    Frontend->>NestJS: POST /api/page/publish (title, slug, componentData)
+    NestJS->>NestJS: Validate page data and generate slug
+    NestJS->>Postgres: BEGIN TRANSACTION
+    NestJS->>Postgres: INSERT INTO pages
+    NestJS->>Postgres: COMMIT
+    Postgres-->>NestJS: Created page record
+    NestJS-->>Frontend: 201 Created (page payload)
 ```
 
 ### Component Data Structure

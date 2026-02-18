@@ -49,38 +49,13 @@ If you're new to the backend, we recommend reading in this order:
 
 ## Architecture Overview
 
-```
-┌─────────────┐      ┌──────────────┐      ┌──────────────┐
-│             │      │              │      │              │
-│   React UI  │◄────►│ NestJS API   │◄────►│  PostgreSQL  │
-│  (Port 3001)│      │  (Port 3002) │      │  (Port 5432) │
-│             │      │              │      │              │
-└─────────────┘      └──────┬───────┘      └──────────────┘
-                            │
-                            │ Socket.IO (WebSocket)
-                            │ HTTP/REST
-                            │
-                    ┌───────▼────────┐
-                    │                │
-                    │ Agent Manager  │
-                    │   FastAPI      │
-                    │  (Port 8000)   │
-                    └───────┬────────┘
-                            │
-                    ┌───────▼────────┐
-                    │                │
-                    │   Celery       │
-                    │   Worker       │
-                    │                │
-                    └───────┬────────┘
-                            │
-                    ┌───────▼────────┐
-                    │                │
-                    │     Redis      │
-                    │  (Pub/Sub)     │
-                    │  (Celery Broker)│
-                    │  (Port 6379)   │
-                    └────────────────┘
+```mermaid
+flowchart TB
+    UI["React UI (Port 3001)"] <--> Nest["NestJS API (Port 3002)"]
+    Nest <--> Postgres["PostgreSQL (Port 5432)"]
+    Nest -->|Socket.IO (WebSocket) / HTTP/REST| AgentManager["Agent Manager FastAPI (Port 8000)"]
+    AgentManager --> Celery["Celery Worker"]
+    Celery --> Redis["Redis / Pub/Sub + Celery Broker / (Port 6379)"]
 ```
 
 ## Key Technologies

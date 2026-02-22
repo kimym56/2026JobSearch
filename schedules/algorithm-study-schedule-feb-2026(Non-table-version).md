@@ -211,8 +211,8 @@ Notes:
 
 Person A:
 
-- [ ] Sort Colors (75, M)
-- [ ] Sort an Array (912, M)
+- [x] Sort Colors (75, M) **(Suboptimal)**
+- [x] Sort an Array (912, M) **(Suboptimal)**
 
 Person B:
 
